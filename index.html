@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://herohero.co" crossorigin>
+  <link rel="preconnect" href="https://acjujabdop.cloudimg.io" crossorigin>
+  <link rel="preload" href="https://herohero.co/public/fonts/Silka-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://herohero.co/public/fonts/Silka-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="https://herohero.co/public/fonts/fontface.css" as="style" type="text/css" crossorigin=anonymous>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://herohero.co/images/general-og.jpg">
+  
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:image" content="https://herohero.co/images/general-og.jpg">
+
+    <!-- Manifest / App -->
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://herohero.co/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://herohero.co/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://herohero.co/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="https://herohero.co/icons/safari-pinned-tab.svg" color="#000000">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="https://herohero.co/icons/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    (function() {
+      const style = document.createElement('link')
+  style.setAttribute('rel', 'stylesheet')
+  style.setAttribute('as', 'style')
+  style.setAttribute('crossorigin', 'anonymous')
+  style.setAttribute('href', 'https://herohero.co/public/fonts/fontface.css')
+  style.onload = document.body.classList.add('ff-loaded')
+  document.head.append(style)
+
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('color-schema') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+  </script>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

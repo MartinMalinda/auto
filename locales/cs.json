@@ -1,0 +1,93 @@
+{
+  "notFound": "Nenalezeno",
+  "header": {
+    "startNow": "Začít"
+  },
+  "meta": {
+    "description": "Herohero je sociální síť pro tvůrce a jejich fanoušky.",
+    "title": "O nás # Herohero"
+  },
+  "home": {
+    "mainHeader": "Herohero je\n sociální síť pro\n tvůrce a jejich\n fanoušky.",
+    "subscribers": "Odběratelé",
+    "subscriptionPrice": "Cena za odběr",
+    "ourFee": "Naše poplatky jsou 10 %",
+    "secondSection": {
+      "header": "Každý má možnost tvořit i podporovat práci jiných.",
+      "description": "Neděláme rozdíly mezi profily tvůrců a fanoušků. Budujeme komunitu, ve které jsou všichni na jedné lodi."
+    },
+    "thirdSection": {
+      "header": "Kreativní práce je práce. Proto si zaslouží odměnu.",
+      "description": "Ať už děláš cokoliv, stojí tě to čas, úsilí a prostředky. Na herohero máš možnost získat je zpět přímo od svých fanoušků.",
+      "subscribe": "Subscribe for 5 € / month"
+    },
+    "fourthSection": {
+      "header": "Kreativní práce může mít jakoukoliv podobu.",
+      "description": "Nezáleží, jestli točíš videa, fotíš, píšeš básně nebo děláš podcasty. Na svém profilu můžeš prezentovat cokoliv, co uznáš za vhodné.",
+      "creatorGroups": {
+        "musicians": "Hudebníci",
+        "videoCreators": "Tvůrci videí",
+        "writers": "Spisovatelé",
+        "visualArtists": "Vizuální umělci",
+        "teachers": "Tutoriály a vdělávání",
+        "podcasters": "Podcasty",
+        "photographers": "Fotografové"
+      }
+    },
+    "fifthSection": {
+      "header": "Tvůj profil je opravdu tvůj.",
+      "description": "Asi žádný tvůrce by nechtěl, aby se jeho fanoušci museli prokousávat cizím obsahem. Striktně dbáme na to, aby každý profil fungoval jako kreativní safe space bez vyrušování, bez reklam a bez lajků."
+    },
+    "sixthSection": {
+      "soon": "připravujeme",
+      "post": {
+        "header": "California's nature and wildlife is hugely diverse with great wilderness areas.",
+        "sunday": "Sunday"
+      },
+      "comments": {
+        "1": {
+          "name": "Amy Smith",
+          "text": "this is 😍 great!"
+        },
+        "2": {
+          "name": "Natalia Sharma",
+          "text": "Can you tell us where is  this located exactly? Would love to explore this area too."
+        },
+        "3": {
+          "name": "Carl Brown",
+          "text": "Great stuff, mate!"
+        }
+      },
+      "features": {
+        "1": "Komentáře",
+        "2": "Video a audio",
+        "3": "Bez datového limitu",
+        "4": "Pozvánky",
+        "5": "Měsíční vyúčtování",
+        "6": "Zprávy",
+        "7": "Streamy"
+      }
+    },
+    "seventhSection": {
+      "header": "Vytvoř si vlastní komunitu a staň se profesionálem.",
+      "description": "Protože nejlepší atmosféra je tam, kde se všichni vzájemně respektují a uznávají svoji práci.",
+      "monthlyEarning": "Měsíční příjem",
+      "yearlyEarning": "Roční příjem"
+    },
+    "eightSection": {
+      "header": "Otázky",
+      "howDoIstart": "Jak začít?",
+      "howDoIStartAnswer": "Začít na herohero je velice jednoduché. Stačí se zaregistrovat (což lze i přes e-mail nebo Facebook), propojit svůj účet se službou Stripe (kvůli výplatám) a jednoduše nahrát svůj první obsah. Žádné další překážky neexistují.",
+      "howGetPaid": "Jak a kdy dostanu zaplaceno?",
+      "howGetPaidAnswer": "Fanoušci platí tvůrcům skrze měsíční předplatná a výplata se odesílá na bankovní účet tvůrce vždy během prvního pracovního dne v měsíci. Spolu s ní obdrží tvůrce i vyúčtování. Bezpečnost všech platebních transakcí zajišťuje služba Stripe.",
+      "whatAreTheFees": "Jaké jsou poplatky?",
+      "whatAreTheFeesAnswer": "Herohero si z tvého výdělku strhává 10 %. V této částce jsou zahrnuty poplatky za platební bránu, převod peněz na tvůj bankovní účet, ale i veškerý hosting a další detaily. Žádné další poplatky si neúčtujeme.",
+      "areThereRestrictions": "Jsou zde nějaká omezení?",
+      "areThereRestrictionsAnswer": "Nejsou. Každý může na svůj herohero účet nahrávat neomezené množství videí, audia, obrázků i textu. Typ obsahu zůstává čistě na tobě, samozřejmě pod podmínkou, že nedochází k porušování platných zákonů ČR."
+    }
+  },
+  "footer": {
+    "joinUs": "Přidej se k nám",
+    "helpCenter": "Podpora"
+  }
+}

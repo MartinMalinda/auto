@@ -8,12 +8,9 @@
   },
   "dependencies": {
     "@vueuse/head": "^0.5.1",
-    "aria-progress-range-slider": "martinmalinda/aria-progress-range-slider#a36513d0e3b626776072ca9f09e1a3b0048fa1d0",
     "vue": "^3.0.7",
     "vue-i18n": "^9.0.0",
-    "vue-intersect": "martinmalinda/vue-intersect#fa7b10664c22c2e36f2b01425ca2b1f0fd854b11",
-    "vue-router": "^4.0.5",
-    "alloyfinger": "0.1.16"
+    "vue-router": "^4.0.5"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.6.2",

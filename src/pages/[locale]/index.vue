@@ -9,7 +9,7 @@ import { sendPageView } from '~/utils/analytics'
 sendPageView()
 
 type HeadObject = Parameters<typeof useHead>[0]
-const host = 'https://about.herohero.co'
+const host = 'https://about.herohero.co'; // TODO
 const route = useRoute()
 const { t, locale, availableLocales } = useI18n()
 
@@ -59,23 +59,9 @@ watch(
 <template>
   <div>
     <WebsiteSchema :t="t" :locale="route.params.locale" />
-    <Welcome />
-    <EveryoneCanCreate class="section-spacing" />
-    <BuildYourCommunity />
-    <Creators />
-    <NoDistractions class="section-spacing" />
-    <Features />
-    <Calculation />
-    <FAQ class="section-spacing" />
+    <div>Hello!</div>
   </div>
 </template>
 
 <style lang="scss">
-.section-spacing {
-  padding-top: 168px;
-
-  @media (max-width: 950px) {
-    padding-top: 96px;
-  }
-}
 </style>

@@ -1,10 +1,7 @@
 dependencies:
   '@vueuse/head': 0.5.1_vue@3.0.7
-  alloyfinger: 0.1.16
-  aria-progress-range-slider: github.com/martinmalinda/aria-progress-range-slider/a36513d0e3b626776072ca9f09e1a3b0048fa1d0
   vue: 3.0.7
   vue-i18n: 9.0.0_vue@3.0.7
-  vue-intersect: github.com/martinmalinda/vue-intersect/fa7b10664c22c2e36f2b01425ca2b1f0fd854b11_vue@3.0.7
   vue-router: 4.0.5_vue@3.0.7
 devDependencies:
   '@antfu/eslint-config': 0.6.2_eslint@7.22.0+typescript@4.2.3
@@ -1587,10 +1584,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-+nu0HDv7kNSOua9apAVc979qd932rrZeb3WOvoiD31A/p1mIE5/9bN2027pE2rOPYEdS3UHzsvof4hY+lM9/WQ==
-  /alloyfinger/0.1.16:
-    dev: false
-    resolution:
-      integrity: sha512-AfsLALs929WQsjSk1pbysoiVU3bgm/4k1wdZDtMQ7uI7b8XweqCCnUiBYqqdp8uPZ1fBq/+LCJhgUlhd90FssQ==
   /ansi-colors/4.1.1:
     dev: true
     engines:
@@ -5892,23 +5885,6 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-D1mvvtDG0L5ft/jGWkLpG1+m0eQxOfaBvTNELraWj22wSVUMWxZUvYgJYcKh6jGGIkJFhH4IZPQhR4TKpc8mBw==
-  github.com/martinmalinda/aria-progress-range-slider/a36513d0e3b626776072ca9f09e1a3b0048fa1d0:
-    dev: false
-    name: aria-progress-range-slider
-    resolution:
-      tarball: https://codeload.github.com/martinmalinda/aria-progress-range-slider/tar.gz/a36513d0e3b626776072ca9f09e1a3b0048fa1d0
-    version: 0.0.7
-  github.com/martinmalinda/vue-intersect/fa7b10664c22c2e36f2b01425ca2b1f0fd854b11_vue@3.0.7:
-    dependencies:
-      vue: 3.0.7
-    dev: false
-    id: github.com/martinmalinda/vue-intersect/fa7b10664c22c2e36f2b01425ca2b1f0fd854b11
-    name: vue-intersect
-    peerDependencies:
-      vue: ^3.0.1
-    resolution:
-      tarball: https://codeload.github.com/martinmalinda/vue-intersect/tar.gz/fa7b10664c22c2e36f2b01425ca2b1f0fd854b11
-    version: 1.1.5
 specifiers:
   '@antfu/eslint-config': ^0.6.2
   '@intlify/vite-plugin-vue-i18n': ^2.0.3
@@ -5917,8 +5893,6 @@ specifiers:
   '@vue/compiler-sfc': ^3.0.7
   '@vue/server-renderer': ^3.0.7
   '@vueuse/head': ^0.5.1
-  alloyfinger: 0.1.16
-  aria-progress-range-slider: martinmalinda/aria-progress-range-slider#a36513d0e3b626776072ca9f09e1a3b0048fa1d0
   cross-env: ^7.0.3
   eslint: ^7.22.0
   https-localhost: ^4.6.4
@@ -5933,5 +5907,4 @@ specifiers:
   vite-ssg: ^0.9.1
   vue: ^3.0.7
   vue-i18n: ^9.0.0
-  vue-intersect: martinmalinda/vue-intersect#fa7b10664c22c2e36f2b01425ca2b1f0fd854b11
   vue-router: ^4.0.5

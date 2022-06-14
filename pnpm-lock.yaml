@@ -1,5 +1,6 @@
 dependencies:
   '@vueuse/head': 0.5.1_vue@3.0.7
+  path-data-polyfill: 1.0.3
   vue: 3.0.7
   vue-i18n: 9.0.0_vue@3.0.7
   vue-router: 4.0.5_vue@3.0.7
@@ -4163,6 +4164,10 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha512-CiyeOxFT/JZyN5m0z9PfXw4SCBJ6Sygz1Dpl0wqjlhDEGGBP1GnsUVEL0p63hoG1fcj3fHynXi9NYO4nWOL+qQ==
+  /path-data-polyfill/1.0.3:
+    dev: false
+    resolution:
+      integrity: sha512-zZMXB709yzMu7y+2FkKDn4Ctp+uEbufmCkO1w90itOTGH99Dq6N8jXmX7bcxrUT/dMw2jnmKN8ucfw9LI/XToQ==
   /path-exists/3.0.0:
     dev: true
     engines:
@@ -5896,6 +5901,7 @@ specifiers:
   cross-env: ^7.0.3
   eslint: ^7.22.0
   https-localhost: ^4.6.4
+  path-data-polyfill: ^1.0.3
   pnpm: ^5.18.7
   sass: ^1.32.8
   typescript: ^4.2.3

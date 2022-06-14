@@ -34,6 +34,7 @@ export default defineComponent({
     :class="[duration, `direction-${direction}`]"
     name="slide"
     mode="out-in"
+    appear
   >
     <slot />
   </transition>
@@ -86,11 +87,11 @@ export default defineComponent({
   // z-index: 100;
   &.direction-down {
     // animation: appear-in 0.2s reverse;
-    animation: slide-down 0.2s forwards;
+    animation: slide-down 0.4s forwards;
   }
 
   &.direction-up {
-    animation: slide-up 0.2s forwards;
+    animation: slide-up 0.4s forwards;
   }
 
   &.direction-right {

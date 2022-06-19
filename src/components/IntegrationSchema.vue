@@ -1,43 +1,23 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
 import IntegrationSchemaSVG from "~/components/IntegrationSchemaSVG3.vue";
-import { getCurves, getSortedDOMPoints, createDot } from '~/utils/schema';
+import { getCurves, addDotToCurve } from '~/utils/schema';
+
+const MAX_DOTS = 15;
 
 onMounted(() => {
   const curves = getCurves();
-  const addDotToCurve = (curve: SVGGeometryElement) => {
-    const dot = createDot({ r: 5, color: '#2EB57C' });
-    const points = getSortedDOMPoints(curve);
-
-    let index = 0;
-    let direction = 1;
-    const run = () => {
-      requestAnimationFrame(() => {
-        const point = points[index];
-        if (point) {
-
-          dot.setAttribute("transform", `translate(${point.x}, ${point.y})`);
-          index = index + direction;
-          run();
-        } else {
-          direction = direction * -1;
-          index = index + direction;
-          setTimeout(run, Math.random() * 500);
-        }
-      });
-    };
-
-    run();
-  };
+  const pointsMap = new Map();
+  const svgEl = document.querySelector('.schema-svg') as HTMLElement;
 
   let interval = 600;
   curves.forEach(curve => {
     const add = () => {
-      addDotToCurve(curve);
-      setTimeout(add, interval);
+      addDotToCurve(curve, { pointsMap, svgEl });
+      // setTimeout(add, interval);
     };
     const remove = () => {
-      const circle = document.querySelector('circle:not(.hidden)');
+      const circle = document.querySelector('.schema-svg circle:not(.hidden)');
       if (circle) {
         circle.classList.add('hidden');
         setTimeout(() => circle.remove(), 1000);
@@ -45,11 +25,11 @@ onMounted(() => {
     };
     setTimeout(add, interval);
     interval = interval + Math.random() * 1000;
-    curve.addEventListener('click', () => addDotToCurve(curve));
+    curve.addEventListener('click', () => addDotToCurve(curve, { pointsMap, svgEl }));
 
     // prevent too many dots
     setInterval(() => {
-      const extra = document.querySelectorAll('circle:not(.hidden)').length - 20;
+      const extra = document.querySelectorAll('.schema-svg circle:not(.hidden)').length - MAX_DOTS;
       if (extra > 0) {
         Array(extra).fill(0).forEach(remove);
       }

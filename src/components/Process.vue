@@ -15,8 +15,10 @@ const isMobile = ref(false);
 const setIsMobile = () => {
   isMobile.value = window.innerWidth < 700;
 };
-setIsMobile();
-window.addEventListener('resize', setIsMobile);
+onMounted(() => {
+  setIsMobile();
+  window.addEventListener('resize', setIsMobile);
+});
 
 
 

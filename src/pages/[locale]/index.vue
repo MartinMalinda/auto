@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
-import { computed, watch } from '@vue/runtime-core'
+import { computed, onMounted, watch } from '@vue/runtime-core'
 import { useHead } from '@vueuse/head'
 import { WebsiteSchema } from '~/components/schema'
 import { sendPageView } from '~/utils/analytics'
@@ -13,8 +13,6 @@ import Reviews from '~/components/Reviews.vue';
 import Process from '~/components/Process.vue'
 import Notion from '~/components/logos/Notion.vue'
 import Email from '~/components/logos/Email.vue'
-
-sendPageView()
 
 type HeadObject = Parameters<typeof useHead>[0]
 const host = 'https://about.herohero.co'; // TODO
@@ -73,20 +71,24 @@ watchEffect(() => {
 });
 
 
-setInterval(() => {
-  if (index.value === automationOptions.length - 1) {
-    index.value = 0;
-  } else {
-    index.value++;
-  }
+onMounted(() => {
+  setInterval(() => {
+    if (index.value === automationOptions.length - 1) {
+      index.value = 0;
+    } else {
+      index.value++;
+    }
 
-  setTimeout(() => {
-    nextTick(() => {
-      const width = document.querySelector('.highlight')?.clientWidth;
-      document.querySelector('.highlight-wrap')?.setAttribute('style', `width: ${width}px`);
-    });
-  }, 550);
-}, 3000);
+    setTimeout(() => {
+      nextTick(() => {
+        const width = document.querySelector('.highlight')?.clientWidth;
+        document.querySelector('.highlight-wrap')?.setAttribute('style', `width: ${width}px`);
+      });
+    }, 550);
+  }, 3000);
+
+  sendPageView();
+});
 
 </script>
 <template>

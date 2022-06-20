@@ -22,7 +22,7 @@ export function onIdle(cb: () => void) {
     return
   }
 
-  window.setTimeout(cb, 1000)
+  setTimeout(cb, 1000)
 }
 
 export function waitForIdle() {

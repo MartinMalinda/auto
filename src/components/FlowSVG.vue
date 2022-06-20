@@ -3,14 +3,13 @@
     <defs>
       <path id="reuse-0" fill="#fff" d="M0 0h80v80H0z" />
     </defs>
-    <circle class="step step-1" cx="88" cy="190" r="88" fill="#fff" stroke="#000" stroke-opacity=".2"
-      stroke-width="4" />
+    <circle class="step step-1" cx="95" cy="190" r="88" fill="#fff" stroke="#000" stroke-opacity="0" stroke-width="4" />
     <text class="step step-1" x="44" y="330" fill="black" style="font: 500 26px Ubuntu">Consult</text>
     <text class="step step-2" x="52" y="355" fill="black" style="font: 400 16px Ubuntu;">processes</text>
     <text class="step step-2" x="20" y="377" fill="black" style="font: 400 16px Ubuntu;">your business model</text>
     <text class="step step-2" x="32" y="398" fill="black" style="font: 400 16px Ubuntu;">conversion flow</text>
     <text class="step step-2" x="20" y="419" fill="black" style="font: 400 16px Ubuntu;">your tools / software</text>
-    <circle class="step step-4" cx="392" cy="190" r="88" fill="#fff" stroke="#000" stroke-opacity=".2"
+    <circle class="step step-4" cx="392" cy="190" r="88" fill="#fff" stroke="#000" stroke-opacity="0"
       stroke-width="4" />
     <text class="step step-4" x="335" y="330" fill="black" style="font: 500 26px Ubuntu">Integrate</text>
     <text class="step step-5" x="331" y="355" fill="black" style="font: 400 16px Ubuntu;">set up new tools</text>
@@ -19,7 +18,7 @@
     <text class="step step-5" x="315" y="419" fill="black" style="font: 400 16px Ubuntu;">write code if needed</text>
     <path class="step step-3 arrow arrow-1" fill="#B3B3B3"
       d="M180 188.5a1.5 1.5 0 0 0 0 3v-3Zm121 2.6c.6-.6.6-1.6 0-2.2l-9.5-9.5a1.5 1.5 0 0 0-2.1 2.1l8.5 8.5-8.5 8.5a1.5 1.5 0 0 0 2.1 2.1l9.6-9.5Zm-121 .4h120v-3H180v3Z" />
-    <circle class="step step-7" cx="696" cy="190" r="88" fill="#fff" stroke="#000" stroke-opacity=".2"
+    <circle class="step step-7" cx="696" cy="190" r="88" fill="#fff" stroke="#000" stroke-opacity="0"
       stroke-width="4" />
     <text class="step step-7" x="640" y="330" fill="black" style="font: 500 26px Ubuntu;">Empower</text>
     <text class="step step-9" x="614" y="355" fill="black" style="font: 400 16px Ubuntu;">explain the
@@ -94,9 +93,8 @@
         <feFlood flood-opacity="0" result="BackgroundImageFix" />
         <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
         <feOffset dy="2" />
-        <feGaussianBlur stdDeviation="3" />
+        <feGaussianBlur stdDeviation="2" />
         <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.34902 0" />
-        <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_0_1" />
         <feBlend in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape" />
       </filter>
       <filter id="e" width="110" height="110" x="641" y="138" color-interpolation-filters="sRGB"
@@ -104,9 +102,8 @@
         <feFlood flood-opacity="0" result="BackgroundImageFix" />
         <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
         <feOffset dy="2" />
-        <feGaussianBlur stdDeviation="3" />
+        <feGaussianBlur stdDeviation="2" />
         <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.34902 0" />
-        <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_0_1" />
         <feBlend in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape" />
       </filter>
     </defs>

@@ -24,6 +24,7 @@ const findNearest = (x: number, y: number, points: DOMPoint[]) => {
 export function createDot({ r, color, svgEl }: { r: number, color: string, svgEl: HTMLElement }) {
   const dot = document.createElementNS("http://www.w3.org/2000/svg", 'circle');
   dot.classList.add('animated');
+  dot.classList.add('dot');
   dot.setAttribute('cy', '0');
   dot.setAttribute('cx', '0');
   dot.setAttribute('r', String(r));
@@ -37,7 +38,7 @@ export function getSortedDOMPoints(curve: SVGGeometryElement) {
   let totalLength = curve.getTotalLength();
 
   const points = [] as DOMPoint[];
-  for (let i = 0; i <= totalLength; i = i) {
+  for (let i = 0; i <= totalLength; i = i + 1) {
     points.push(curve.getPointAtLength(i));
   }
 
@@ -71,8 +72,9 @@ interface Params {
   onFinish?: (dot: SVGCircleElement) => void,
   onMove?: (point: DOMPoint) => void,
   speed?: number
+  once?: boolean
 };
-export const addDotToCurve = (curve: SVGGeometryElement, { pointsMap, svgEl, onFinish, onMove, speed }: Params) => {
+export const addDotToCurve = (curve: SVGGeometryElement, { pointsMap, svgEl, onFinish, onMove, speed, once }: Params) => {
   const dot = createDot({ r: 5, color: '#2EB57C', svgEl });
   const points = pointsMap.get(curve) || getSortedDOMPoints(curve);
   pointsMap.set(curve, points);
@@ -92,7 +94,9 @@ export const addDotToCurve = (curve: SVGGeometryElement, { pointsMap, svgEl, onF
         direction = direction * -1;
         index = index + direction;
         onFinish && onFinish(dot);
-        setTimeout(run, Math.random() * 500);
+        if (!once) {
+          setTimeout(run, Math.random() * 500);
+        }
       }
     });
   };

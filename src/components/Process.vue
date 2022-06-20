@@ -4,9 +4,10 @@ import FlowSVG from '~/components/FlowSVG.vue';
 import { addDotToCurve, createDot } from '~/utils/schema';
 
 const timeout = (time: number) => new Promise((resolve) => setTimeout(resolve, time));
-const waitForAnimation = (el: Element) => new Promise(resolve =>
-  el.addEventListener('animationend', resolve)
-);
+const waitForAnimation = (el: Element) => new Promise(resolve => {
+  el.addEventListener('animationend', resolve);
+  el.addEventListener('transitionend', resolve)
+});
 
 let options = {
   root: null,
@@ -22,70 +23,91 @@ const steps = [{
   duration: 'quick',
   delay: 0,
 }, {
-  animation: 'appear', // extra text
+  animation: 'slide-down', // extra text
   duration: 'quick',
-  delay: 400,
+  delay: 300,
 }, {
   animation: 'appear', // first arrow
   duration: 'long',
-  delay: 600,
+  delay: 200,
 }, {
   animation: 'appear', // second circle + header
   duration: 'quick',
   delay: 0,
 }, {
-  animation: 'appear', // extra text
+  animation: 'slide-down', // extra text
   duration: 'quick',
-  delay: 400,
+  delay: 300,
 }, {
   animation: 'appear', // second arrow
   duration: 'long',
-  delay: 600,
+  delay: 200,
 }, {
   animation: 'appear', // third circle + header
   duration: 'quick',
   delay: 0,
 }, {
-  animation: 'appear', // extra text
+  animation: 'slide-down', // nothing?
   duration: 'quick',
-  delay: 400,
+  delay: 300,
 }, {
-  animation: 'appear', // repeat arrow
+  animation: 'slide-down', // extra test
   duration: 'long',
   delay: 0,
 },
 {
   animation: 'appear', // repeat arrow
   duration: 'long',
-  delay: 600,
+  delay: 200,
 }]
 
-const animate = async () => {
-  let index = 0;
-  const svgEl = document.querySelector('.process svg') as HTMLElement;
-  const pointsMap = new Map();
-  addDotToCurve(document.querySelector('.process circle') as SVGGeometryElement, {
-    pointsMap,
-    svgEl,
-    speed: 1,
-    onMove(point) {
-      const dot = createDot({ r: 5, color: '#000', svgEl });
-      dot.setAttribute("transform", `translate(${point.x}, ${point.y})`);
-    },
-    onFinish: (dot) => {
-      dot.remove();
-    }
-  });
+const cleanup = () => {
+  document.querySelectorAll('.process .dot').forEach(dot => dot.remove());
+
   document.querySelectorAll('.step').forEach(stepEl => {
     stepEl.classList.remove('appear');
-    stepEl.classList.remove('slide-left');
+    stepEl.classList.remove('slide-down');
     stepEl.classList.remove('slide-left');
     stepEl.classList.remove('quick');
     stepEl.classList.remove('long');
+
     waitForAnimation(stepEl).then(() => {
       console.log('finished', (stepEl.className as any).baseVal ? (stepEl.className as any).baseVal : stepEl.className);
     });
   });
+};
+
+const animate = async () => {
+  let index = 0;
+  cleanup();
+  const svgEl = document.querySelector('.process svg') as HTMLElement;
+  const h2 = document.querySelector('.process h2') as HTMLElement;
+  const pointsMap = new Map();
+
+  await waitForAnimation(h2);
+  await timeout(500);
+
+  for (let stepEl of Array.from(document.querySelectorAll('.step'))) {
+    if (stepEl.tagName === 'circle') {
+      requestAnimationFrame(() => {
+        addDotToCurve(stepEl as SVGGeometryElement, {
+          pointsMap,
+          svgEl,
+          speed: 4,
+          once: true,
+          onMove(point) {
+            const dot = createDot({ r: 3, color: '#ccc', svgEl });
+            requestAnimationFrame(() => dot.setAttribute("transform", `translate(${point.x}, ${point.y})`));
+          },
+          onFinish: (dot) => {
+            dot.remove();
+          }
+        });
+      });
+
+      await timeout(150);
+    }
+  }
 
   await timeout(1000);
 
@@ -93,10 +115,17 @@ const animate = async () => {
     const step = steps[index];
     const elements = Array.from(document.querySelectorAll(`.step-${index + 1}`));
     const [firstEl] = elements;
+    const [lastEl] = elements.reverse();
     if (firstEl) {
+      const finalAnimPromise = waitForAnimation(lastEl);
       await timeout(step.delay);
-      elements.forEach((el) => el.classList.add(step.animation));
-      await waitForAnimation(firstEl);
+      for (let [index, el] of elements.entries()) {
+        requestAnimationFrame(() => el.classList.add(step.animation));
+        if (index < elements.length) {
+          await timeout(50);
+        }
+      }
+      await finalAnimPromise;
     }
 
     index++;
@@ -107,7 +136,9 @@ onMounted(() => {
   let observer = new IntersectionObserver(([entry]) => {
     isVisible.value = entry.isIntersecting;
     if (entry.isIntersecting) {
-      // animate();
+      animate();
+    } else {
+      cleanup();
     }
   }, options);
   observer.observe(elRef.value as HTMLElement);
@@ -125,7 +156,7 @@ onMounted(() => {
 @keyframes appear-blur {
   0% {
     opacity: 0;
-    filter: blur(10px);
+    filter: blur(8px);
   }
 
   100% {
@@ -134,29 +165,18 @@ onMounted(() => {
   }
 }
 
-@keyframes slide-left {
+@keyframes slide-from-up {
   0% {
     opacity: 0;
-    transform: translateX(0px) scale(0.7, 1)
+    transform: translateY(-10px);
   }
 
   100% {
     opacity: 1;
-    transform: translateX(0) scale(1, 1)
+    transform: translateY(0);
   }
 }
 
-.appear {
-  animation: 0.6s appear-blur forwards;
-}
-
-.slide-left {
-  animation: 0.8s slide-left forwards;
-}
-
-.step {
-  opacity: 0;
-}
 
 .process {
   position: relative;
@@ -164,12 +184,28 @@ onMounted(() => {
   max-width: 100%;
   flex-shrink: 0;
 
+
   svg {
     padding-top: 100px;
     width: 100%;
     transition: opacity 1s;
     transition-delay: 2s;
+
+
+    .appear {
+      animation: 0.3s appear-blur forwards;
+    }
+
+    .slide-down {
+      animation: 0.6s slide-from-up forwards;
+    }
+
+
+    .step {
+      opacity: 0;
+    }
   }
+
 
   h2 {
     position: absolute;

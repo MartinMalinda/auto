@@ -139,6 +139,17 @@ $card-delay: 0.1s;
     }
   }
 
+  @media (max-width: 600px) {
+    width: 400px;
+    flex-direction: column;
+
+    p {
+      padding: 0;
+      margin: 0;
+      text-align: center;
+    }
+  }
+
   img {
     flex-shrink: 0;
     width: 150px;

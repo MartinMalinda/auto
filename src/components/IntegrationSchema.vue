@@ -14,7 +14,7 @@ onMounted(() => {
   curves.forEach(curve => {
     const add = () => {
       addDotToCurve(curve, { pointsMap, svgEl });
-      // setTimeout(add, interval);
+      setTimeout(add, interval);
     };
     const remove = () => {
       const circle = document.querySelector('.schema-svg circle:not(.hidden)');
@@ -55,6 +55,7 @@ onMounted(() => {
     display: block;
     margin: 0 auto;
     max-height: calc(100vh - 300px);
+    max-width: 100%;
 
     circle,
     .curve:hover {

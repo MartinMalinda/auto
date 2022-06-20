@@ -85,7 +85,7 @@ setInterval(() => {
       const width = document.querySelector('.highlight')?.clientWidth;
       document.querySelector('.highlight-wrap')?.setAttribute('style', `width: ${width}px`);
     });
-  }, 500);
+  }, 550);
 }, 3000);
 
 </script>
@@ -155,6 +155,10 @@ setInterval(() => {
 .playground {
   min-height: 100vh;
   padding: 0 2rem;
+
+  @media (max-width: 600px) {
+    min-height: auto;
+  }
 }
 
 .bubble {
@@ -179,6 +183,7 @@ h2 {
   @media (max-width: 600px) {
     font-size: 1.4em;
     text-align: center;
+    padding-bottom: 2rem;
   }
 }
 
@@ -192,6 +197,8 @@ h2 {
     display: block;
     margin: 0.7rem auto;
     text-align: center;
+    width: 100% !important;
+    border-bottom: 0;
   }
 }
 

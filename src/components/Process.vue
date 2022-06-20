@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from '@vue/runtime-dom';
-import FlowSVG from '~/components/FlowSVG.vue';
+import { defineAsyncComponent, onMounted, ref } from '@vue/runtime-dom';
 import { addDotToCurve, createDot } from '~/utils/schema';
 
 const timeout = (time: number) => new Promise((resolve) => setTimeout(resolve, time));
@@ -8,6 +7,18 @@ const waitForAnimation = (el: Element) => new Promise(resolve => {
   el.addEventListener('animationend', resolve);
   el.addEventListener('transitionend', resolve)
 });
+
+
+const FlowSVGMobile = defineAsyncComponent(() => import('~/components/FlowSVGMobile.vue'))
+const FlowSVG = defineAsyncComponent(() => import('~/components/FlowSVG.vue'))
+const isMobile = ref(false);
+const setIsMobile = () => {
+  isMobile.value = window.innerWidth < 700;
+};
+setIsMobile();
+window.addEventListener('resize', setIsMobile);
+
+
 
 let options = {
   root: null,
@@ -84,7 +95,9 @@ const animate = async () => {
   const h2 = document.querySelector('.process h2') as HTMLElement;
   const pointsMap = new Map();
 
-  await waitForAnimation(h2);
+  if (window.innerWidth > 700) {
+    await waitForAnimation(h2);
+  }
   await timeout(500);
 
   for (let stepEl of Array.from(document.querySelectorAll('.step'))) {
@@ -148,7 +161,8 @@ onMounted(() => {
 <template>
   <div ref="elRef" class="process" :class="{ visible: isVisible }">
     <h2>How can I help?</h2>
-    <FlowSVG />
+    <FlowSVGMobile v-if="isMobile" />
+    <FlowSVG v-else />
   </div>
 </template>
 
@@ -215,6 +229,12 @@ onMounted(() => {
     transition: top 1s, left 1s;
     transition-delay: 0.3s;
     opacity: 0;
+
+    @media (max-width: 600px) {
+      top: 0;
+      left: 0;
+      transform: none;
+    }
   }
 
   &.visible {
@@ -224,8 +244,6 @@ onMounted(() => {
       transform: translate(0, 0);
       opacity: 1;
     }
-
-    svg {}
   }
 }
 </style>

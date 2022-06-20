@@ -26,22 +26,6 @@
 </head>
 <body>
   <div id="app"></div>
-  <script>
-    (function() {
-      const style = document.createElement('link')
-  style.setAttribute('rel', 'stylesheet')
-  style.setAttribute('as', 'style')
-  style.setAttribute('crossorigin', 'anonymous')
-  style.setAttribute('href', 'https://herohero.co/public/fonts/fontface.css')
-  style.onload = document.body.classList.add('ff-loaded')
-  document.head.append(style)
-
-  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-      const setting = localStorage.getItem('color-schema') || 'auto'
-      if (setting === 'dark' || (prefersDark && setting !== 'light'))
-        document.documentElement.classList.toggle('dark', true)
-    })()
-  </script>
   <script type="module" src="/src/main.ts"></script>
 </body>
 </html>

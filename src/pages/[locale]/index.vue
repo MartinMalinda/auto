@@ -13,6 +13,7 @@ import Reviews from '~/components/Reviews.vue';
 import Process from '~/components/Process.vue'
 import Notion from '~/components/logos/Notion.vue'
 import Email from '~/components/logos/Email.vue'
+import { useMouseDots } from '~/utils/mouse';
 
 type HeadObject = Parameters<typeof useHead>[0]
 const host = 'https://about.herohero.co'; // TODO
@@ -90,6 +91,8 @@ onMounted(() => {
   sendPageView();
 });
 
+useMouseDots({ dotCount: 100, dotSize: 10, color: '#31B57C' });
+
 </script>
 <template>
   <div>
@@ -135,6 +138,10 @@ onMounted(() => {
       </div>
     </div>
   </div>
+  <footer><small>{{ new Date().getFullYear() }}
+      <a href="https://github.com/MartinMalinda/auto/blob/master/LICENSE">MIT License</a> |
+      <a href="https://github.com/MartinMalinda/auto">hosted on Github 🔍</a>
+    </small></footer>
 </template>
 
 <style lang="scss">
@@ -276,6 +283,18 @@ h2 {
         height: 40px;
       }
     }
+  }
+}
+
+footer {
+  text-align: center;
+  background: black;
+  padding: 1rem;
+  color: white;
+
+  a {
+    color: whitesmoke;
+    text-decoration: none;
   }
 }
 </style>

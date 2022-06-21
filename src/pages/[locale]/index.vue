@@ -91,7 +91,7 @@ onMounted(() => {
   sendPageView();
 });
 
-useMouseDots({ dotCount: 100, dotSize: 10, color: '#31B57C' });
+useMouseDots({ dotCount: 50, dotSize: 10, color: '#31B57C' });
 
 </script>
 <template>

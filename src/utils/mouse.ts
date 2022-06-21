@@ -13,6 +13,7 @@ export function useMouseDots({ dotCount, dotSize, color }) {
     top: 0;
     left: 0;
     opacity: ${1 - speed};
+    pointer-events: none;
     transition: ${speed}s transform, 0.3s opacity;
     transform: translate(${x}px, ${y}px);
   `;
@@ -21,14 +22,15 @@ export function useMouseDots({ dotCount, dotSize, color }) {
       el.setAttribute('style', getStyle({
         x: 0,
         y: 0,
-        speed: Math.random(),
+        speed: 1,
       }));
       document.body.append(el);
       return el;
     });
 
     let lastMouseMove = new Date();
-    document.body.addEventListener('mousemove', (event) => {
+    const containerEl = document.querySelector('.info-wrap');
+    containerEl?.addEventListener('mousemove', (event) => {
       dots.forEach(async (dotEl) => {
         lastMouseMove = new Date();
         timeout(20 * Math.random());
@@ -44,11 +46,23 @@ export function useMouseDots({ dotCount, dotSize, color }) {
       });
     });
 
+    containerEl?.addEventListener('mouseleave', () => {
+      dots.forEach(async (dotEl) => {
+        dotEl.setAttribute('style', 'opacity: 0');
+        dotEl.dataset.x = String(0);
+        dotEl.dataset.y = String(0);
+      });
+    });
+
     setInterval(() => {
       if (lastMouseMove.getTime() - (new Date()).getTime() < -100) {
         dots.forEach(async (dotEl) => {
-          const x = Number(dotEl.dataset.x);
-          const y = Number(dotEl.dataset.y);
+          const x = Number(dotEl.dataset.x || 0);
+          const y = Number(dotEl.dataset.y || 0);
+          if (x === 0 && y === 0) {
+            return;
+          }
+
           dotEl.setAttribute('style', getStyle({
             x: x + 10 * Math.random() - 10 * Math.random(),
             y: y + 10 * Math.random() - 10 * Math.random(),

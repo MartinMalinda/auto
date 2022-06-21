@@ -13,7 +13,7 @@ onMounted(() => {
   let interval = 600;
   curves.forEach(curve => {
     const add = () => {
-      addDotToCurve(curve, { pointsMap, svgEl });
+      addDotToCurve(curve, { pointsMap, svgEl, speed: 2 });
       setTimeout(add, interval);
     };
     const remove = () => {
@@ -25,7 +25,7 @@ onMounted(() => {
     };
     setTimeout(add, interval);
     interval = interval + Math.random() * 1000;
-    curve.addEventListener('click', () => addDotToCurve(curve, { pointsMap, svgEl }));
+    curve.addEventListener('click', () => addDotToCurve(curve, { pointsMap, svgEl, speed: 4 }));
 
     // prevent too many dots
     setInterval(() => {

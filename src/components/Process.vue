@@ -108,11 +108,11 @@ const animate = async () => {
         addDotToCurve(stepEl as SVGGeometryElement, {
           pointsMap,
           svgEl,
-          speed: 4,
+          speed: 8,
           once: true,
-          onMove(point) {
+          onMove(point, points) {
             const dot = createDot({ r: 3, color: '#ccc', svgEl });
-            requestAnimationFrame(() => dot.setAttribute("transform", `translate(${point.x}, ${point.y})`));
+            dot.setAttribute("transform", `translate(${point.x}, ${point.y})`);
           },
           onFinish: (dot) => {
             dot.remove();

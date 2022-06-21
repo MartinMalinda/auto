@@ -70,30 +70,35 @@ interface Params {
   pointsMap: Map<SVGGeometryElement, DOMPoint[]>,
   svgEl: HTMLElement,
   onFinish?: (dot: SVGCircleElement) => void,
-  onMove?: (point: DOMPoint) => void,
+  onMove?: (point: DOMPoint, points: DOMPoint[]) => void,
   speed?: number
   once?: boolean
 };
 export const addDotToCurve = (curve: SVGGeometryElement, { pointsMap, svgEl, onFinish, onMove, speed, once }: Params) => {
-  const dot = createDot({ r: 5, color: '#2EB57C', svgEl });
   const points = pointsMap.get(curve) || getSortedDOMPoints(curve);
   pointsMap.set(curve, points);
-
+  const dot = createDot({ r: 5, color: '#2EB57C', svgEl });
   let index = 0;
   let direction = 1;
   const run = () => {
     requestAnimationFrame(() => {
-      const point = points[index];
-      if (point) {
+      console.log({ index });
+      const firstPoint = points[index];
+      if (firstPoint) {
+        for (let i = 0; i < (speed || 1); i++) {
+          const point = points[index + i];
+          console.log({ point, i });
+          if (point) {
+            dot.setAttribute("transform", `translate(${point.x}, ${point.y})`);
+            onMove && onMove(point, points);
+          }
+        }
 
-        dot.setAttribute("transform", `translate(${point.x}, ${point.y})`);
-        onMove && onMove(point);
         index = index + (direction * (speed || 1));
         run();
       } else {
         direction = direction * -1;
-        index = index + direction;
-        onFinish && onFinish(dot);
+        index = index + (direction * (speed || 1));
         if (!once) {
           setTimeout(run, Math.random() * 500);
         }

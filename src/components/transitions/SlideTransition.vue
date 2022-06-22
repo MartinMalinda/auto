@@ -30,40 +30,15 @@ export default defineComponent({
 });
 </script>
 <template>
-  <transition
-    :class="[duration, `direction-${direction}`]"
-    name="slide"
-    mode="out-in"
-    appear
-  >
+  <transition :class="[duration, `direction-${direction}`]" name="slide" mode="out-in" appear>
     <slot />
   </transition>
 </template>
 
 <style lang="scss" scoped>
-.slide-enter-active,
-.slide-leave-active {
-  animation-timing-function: linear !important;
-
-  &.instant {
-    animation-duration: 0;
-  }
-
-  &.quick {
-    animation-duration: 0.1s;
-  }
-
-  &.medium {
-    animation-duration: 2s;
-  }
-
-  &.long {
-    animation-duration: 1s;
-  }
-}
-
 .slide-enter-active {
   opacity: 0;
+
   &.direction-down {
     animation: slide-from-up 0.3s forwards;
   }
@@ -84,10 +59,11 @@ export default defineComponent({
 }
 
 .slide-leave-active {
+
   // z-index: 100;
   &.direction-down {
     // animation: appear-in 0.2s reverse;
-    animation: slide-down 0.4s forwards;
+    animation: slide-up 0.4s forwards;
   }
 
   &.direction-up {
@@ -100,6 +76,27 @@ export default defineComponent({
 
   &.direction-left {
     animation: slide-to-right-disappear 0.2s forwards;
+  }
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  animation-timing-function: linear !important;
+
+  &.instant {
+    animation-duration: 0;
+  }
+
+  &.quick {
+    animation-duration: 0.1s;
+  }
+
+  &.medium {
+    animation-duration: 2s;
+  }
+
+  &.long {
+    animation-duration: 1s;
   }
 }
 </style>

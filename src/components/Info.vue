@@ -7,6 +7,13 @@ import SlideTransition from '~/components/transitions/SlideTransition.vue';
 
 const isModalOpen = ref(false);
 const infoElRef = ref<HTMLElement>();
+const showCopyTooltip = ref(false);
+
+const copy = () => {
+  navigator.clipboard.writeText('malindacz@gmail.com');
+  showCopyTooltip.value = true;
+  setTimeout(() => showCopyTooltip.value = false, 1500);
+};
 
 onMounted(() => {
   infoElRef.value?.addEventListener('click', event => {
@@ -27,7 +34,22 @@ onMounted(() => {
             </svg>
           </button>
           <h3>Let's talk!</h3>
-          <input readonly type="email" id="email" value="malindacz@gmail.com" />
+          <div class="input-row">
+            <input readonly type="email" id="email" value="malindacz@gmail.com" />
+            <div class="copy-wrap">
+              <button @click="copy" title="copy email">
+                <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 457 457">
+                  <path
+                    d="m421.5 207-85.8 85.8a121.3 121.3 0 0 1-171.5 0 121.2 121.2 0 0 1-18.4-24.4l39.8-39.9c2-1.9 4.3-3 6.5-4.3a59.7 59.7 0 0 0 15 25.8 60.7 60.7 0 0 0 85.7 0l85.8-85.8a60.7 60.7 0 0 0-85.8-85.8L262.3 109a152.2 152.2 0 0 0-77.3-8.4l65-65a121.3 121.3 0 0 1 171.5 171.6zM194.7 348.2l-30.5 30.5a60.8 60.8 0 0 1-85.8-85.8l85.8-85.7A60 60 0 0 1 265 232.8c2.2-1.3 4.5-2.4 6.4-4.3l39.9-39.8c-5.1-8.7-11-17-18.5-24.5a121.3 121.3 0 0 0-171.5 0L35.5 250a121.3 121.3 0 0 0 171.6 171.5l65-65a152 152 0 0 1-77.4-8.4z" />
+                </svg>
+              </button>
+              <SlideTransition>
+                <div style="position: absolute;" v-if="showCopyTooltip">
+                  <small>copied!</small>
+                </div>
+              </SlideTransition>
+            </div>
+          </div>
           <div class="icons ui container"><a target="_blank" href="https://medium.com/@martinmalinda"><svg role="img"
                 aria-label="Medium icon" viewBox="0 0 256 208" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
@@ -149,17 +171,34 @@ onMounted(() => {
     }
   }
 
-  label {
-    font-size: 1.2rem;
+  .input-row {
+    display: flex;
+
+    button {
+      height: 100%;
+      padding: 0 0.5rem;
+      border: 1px solid rgba(0, 0, 0, 0.09);
+      border-left: 0;
+      background: #0000000c;
+    }
+
+    small {
+      font-weight: 300;
+    }
+
+    svg {
+      width: 2rem;
+      height: 1.5rem;
+    }
+
+    input {
+      padding: 0.5rem 1rem;
+      border: 1px solid rgba(0, 0, 0, 0.09);
+      display: block;
+      font-size: 1.1rem;
+    }
   }
 
-  input {
-    padding: 0.5rem 1rem;
-    border: 1px solid rgba(0, 0, 0, 0.09);
-    display: block;
-    margin-top: 0.5rem;
-    font-size: 1.1rem;
-  }
 }
 
 .info {

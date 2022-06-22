@@ -11,9 +11,8 @@ import { nextTick, watchEffect } from 'vue';
 import IntegrationSchema from '~/components/IntegrationSchema.vue'
 import Reviews from '~/components/Reviews.vue';
 import Process from '~/components/Process.vue'
-import Notion from '~/components/logos/Notion.vue'
-import Email from '~/components/logos/Email.vue'
 import { useMouseDots } from '~/utils/mouse';
+import Info from '~/components/Info.vue'
 
 type HeadObject = Parameters<typeof useHead>[0]
 const host = 'https://about.herohero.co'; // TODO
@@ -124,19 +123,7 @@ useMouseDots({ dotCount: 50, dotSize: 10, color: '#31B57C' });
     </div>
   </div>
   <div class="info-wrap">
-    <div class="info">
-      <h2>Are you interested?</h2>
-      <div class="row">
-        <a>
-          <Email />
-          <h3>Let's talk</h3>
-        </a>
-        <a target="_blank" href="https://dynamic-fontina-af6.notion.site/Automation-55e70f45ddfd4e50a22892f7b189b220">
-          <Notion />
-          <h3>Read more</h3>
-        </a>
-      </div>
-    </div>
+    <Info />
   </div>
   <footer><small>{{ new Date().getFullYear() }}
       <a href="https://github.com/MartinMalinda/auto/blob/master/LICENSE">MIT License</a> |
@@ -159,6 +146,8 @@ useMouseDots({ dotCount: 50, dotSize: 10, color: '#31B57C' });
   align-items: center;
   position: relative;
   padding: 0 2rem;
+  position: relative;
+  z-index: 3;
 }
 
 .playground {
@@ -228,63 +217,12 @@ h2 {
 }
 
 .info-wrap {
+  position: relative;
+  z-index: 1;
   box-shadow: inset 0 0 40px 0px rgba(0, 0, 0, 0.07);
 }
 
-.info {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 
-  h2 {
-    margin-bottom: 5rem;
-  }
-
-  h3 {
-    margin-bottom: 0;
-  }
-
-  .row {
-    display: flex;
-
-    svg {
-      height: 70px;
-    }
-
-    a {
-      width: 200px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-      box-shadow: inset 0 0 40px 0px rgba(0, 0, 0, 0.1);
-      border-radius: 2rem;
-      margin: 1rem;
-      text-decoration: none;
-      color: black;
-      transition: 0.3s transform;
-
-      &:hover {
-        transform: scale(1.1, 1.1);
-      }
-    }
-
-    @media (max-width: 600px) {
-      a {
-        width: 160px;
-        margin: 0.5rem;
-        text-align: center;
-      }
-
-      svg {
-        height: 40px;
-      }
-    }
-  }
-}
 
 footer {
   text-align: center;

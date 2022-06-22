@@ -110,7 +110,7 @@ const animate = async () => {
           svgEl,
           speed: 8,
           once: true,
-          onMove(point, points) {
+          onMove(point) {
             const dot = createDot({ r: 3, color: '#ccc', svgEl });
             dot.setAttribute("transform", `translate(${point.x}, ${point.y})`);
           },

@@ -82,12 +82,10 @@ export const addDotToCurve = (curve: SVGGeometryElement, { pointsMap, svgEl, onF
   let direction = 1;
   const run = () => {
     requestAnimationFrame(() => {
-      console.log({ index });
       const firstPoint = points[index];
       if (firstPoint) {
         for (let i = 0; i < (speed || 1); i++) {
           const point = points[index + i];
-          console.log({ point, i });
           if (point) {
             dot.setAttribute("transform", `translate(${point.x}, ${point.y})`);
             onMove && onMove(point, points);
@@ -95,10 +93,11 @@ export const addDotToCurve = (curve: SVGGeometryElement, { pointsMap, svgEl, onF
         }
 
         index = index + (direction * (speed || 1));
-        run();
+        setTimeout(run, 16);
       } else {
         direction = direction * -1;
         index = index + (direction * (speed || 1));
+        onFinish && onFinish(dot);
         if (!once) {
           setTimeout(run, Math.random() * 500);
         }

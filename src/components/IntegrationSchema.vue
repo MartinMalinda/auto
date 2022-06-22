@@ -1,9 +1,15 @@
 <script setup lang="ts">
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
 import IntegrationSchemaSVG from "~/components/IntegrationSchemaSVG3.vue";
 import { getCurves, addDotToCurve } from '~/utils/schema';
+import { useIntersectionObserver, waitUntilTruthy } from '~/utils/intersect';
 
 const MAX_DOTS = 15;
+
+const elRef = ref<HTMLElement>();
+const { isVisible } = useIntersectionObserver({
+  elRef,
+});
 
 onMounted(() => {
   const curves = getCurves();
@@ -12,8 +18,10 @@ onMounted(() => {
 
   let interval = 600;
   curves.forEach(curve => {
-    const add = () => {
+    const add = async () => {
+      console.log('adding dot');
       addDotToCurve(curve, { pointsMap, svgEl, speed: 2 });
+      await waitUntilTruthy(isVisible);
       setTimeout(add, interval);
     };
     const remove = () => {
@@ -29,6 +37,10 @@ onMounted(() => {
 
     // prevent too many dots
     setInterval(() => {
+      if (!isVisible.value) {
+        return;
+      }
+
       const extra = document.querySelectorAll('.schema-svg circle:not(.hidden)').length - MAX_DOTS;
       if (extra > 0) {
         Array(extra).fill(0).forEach(remove);
@@ -42,7 +54,7 @@ onMounted(() => {
 });
 </script>
 <template>
-  <div class="schema">
+  <div ref="elRef" class="schema">
     <IntegrationSchemaSVG />
   </div>
 </template>

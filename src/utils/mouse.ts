@@ -8,10 +8,11 @@ export function useMouseDots({ dotCount, dotSize, color }) {
     height: ${dotSize}px;
     border-radius: 50%;
     background: ${color};
-    will-change: transform;
+    will-change: transform, opacity;
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 2;
     opacity: ${1 - speed};
     pointer-events: none;
     transition: ${speed}s transform, 0.3s opacity;
@@ -30,7 +31,8 @@ export function useMouseDots({ dotCount, dotSize, color }) {
 
     let lastMouseMove = new Date();
     const containerEl = document.querySelector('.info-wrap');
-    containerEl?.addEventListener('mousemove', (event) => {
+    containerEl?.addEventListener('mousemove', (e) => {
+      const event = e as MouseEvent;
       dots.forEach(async (dotEl) => {
         lastMouseMove = new Date();
         timeout(20 * Math.random());

@@ -59,12 +59,17 @@ const labels = {
       transform: rotate(180deg);
     }
   }
+
+  @media (max-width: 600px) {
+    top: auto;
+    bottom: 0;
+  }
 }
 
 .locale {
   border: 0;
-  box-shadow: inset 0 0 40px 0px rgba(0, 0, 0, 0.05);
-  background: none;
+  box-shadow: inset 0 0 20px 0px rgba(0, 0, 0, 0.08);
+  background: white;
   width: 150px;
   display: block;
   color: rgb(255, 100, 100);

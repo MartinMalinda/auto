@@ -116,12 +116,12 @@ useMouseDots({ dotCount: 50, dotSize: 10, color: '#31B57C' });
     <div class="process-wrap">
       <Process />
     </div>
-    <div class="reviews-wrap">
+    <!-- <div class="reviews-wrap">
       <Reviews />
       <div class="more-reviews">
         <a href="https://www.linkedin.com/in/martin-malinda-58b03253/">{{ t('reviews.readMoreOnLinkedin') }}</a>
       </div>
-    </div>
+    </div> -->
   </div>
   <div class="info-wrap">
     <Info />

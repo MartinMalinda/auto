@@ -4,6 +4,9 @@ import Email from '~/components/logos/Email.vue';
 import { ref } from '@vue/reactivity';
 import { onMounted, Teleport } from '@vue/runtime-core';
 import SlideTransition from '~/components/transitions/SlideTransition.vue';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 
 const isModalOpen = ref(false);
 const infoElRef = ref<HTMLElement>();
@@ -33,7 +36,7 @@ onMounted(() => {
                 d="m18.7 6.7-1.4-1.4-5.3 5.3-5.3-5.3-1.4 1.4 5.3 5.3-5.3 5.3 1.4 1.4 5.3-5.3 5.3 5.3 1.4-1.4-5.3-5.3z" />
             </svg>
           </button>
-          <h3>Let's talk!</h3>
+          <h3>{{ t('info.letsTalk') }}</h3>
           <div class="input-row">
             <input readonly type="email" id="email" value="malindacz@gmail.com" />
             <div class="copy-wrap">
@@ -45,7 +48,7 @@ onMounted(() => {
               </button>
               <SlideTransition>
                 <div style="position: absolute;" v-if="showCopyTooltip">
-                  <small>copied!</small>
+                  <small>{{ t('copied') }}</small>
                 </div>
               </SlideTransition>
             </div>
@@ -104,15 +107,15 @@ onMounted(() => {
         </div>
       </SlideTransition>
     </Teleport>
-    <h2>Are you interested?</h2>
+    <h2>{{ t('info.areYouInterested') }}</h2>
     <div class="row">
       <a role="button" @click.stop="() => isModalOpen = !isModalOpen">
         <Email />
-        <h3>Let's talk</h3>
+        <h3>{{ t('info.letsTalk') }}</h3>
       </a>
       <a target="_blank" href="https://dynamic-fontina-af6.notion.site/Automation-55e70f45ddfd4e50a22892f7b189b220">
         <Notion />
-        <h3>Read more</h3>
+        <h3>{{ t('info.readMore') }}</h3>
       </a>
     </div>
   </div>

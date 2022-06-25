@@ -12,12 +12,13 @@ import IntegrationSchema from '~/components/IntegrationSchema.vue'
 import Reviews from '~/components/Reviews.vue';
 import Process from '~/components/Process.vue'
 import { useMouseDots } from '~/utils/mouse';
-import Info from '~/components/Info.vue'
+import Info from '~/components/Info.vue';
+import LanguageSwitch from '~/components/LanguageSwitch.vue'
 
 type HeadObject = Parameters<typeof useHead>[0]
-const host = 'https://about.herohero.co'; // TODO
+const host = 'https://automate.martinmalinda.cz'; // TODO
 const route = useRoute()
-const { t, locale, availableLocales } = useI18n()
+const { t, locale, availableLocales } = useI18n();
 
 const head = computed<HeadObject>(() => {
   const currentLocale = route.params.locale
@@ -63,7 +64,7 @@ watch(
 )
 
 const index = ref(0);
-const automationOptions = ['hiring', 'project management', 'analytics', 'feedback collection', 'documentation', 'social media', 'communication', 'onboarding'];
+const automationOptions = t('intro.options').split(',');
 const selectedOption = ref(automationOptions[0]);
 
 watchEffect(() => {
@@ -99,8 +100,8 @@ useMouseDots({ dotCount: 50, dotSize: 10, color: '#31B57C' });
     <div class="playground">
       <div class="schema-wrap">
         <IntegrationSchema />
-        <h1>Hi, I'm Martin 👋</h1>
-        <h2>Let me automate
+        <h1>{{ t('intro.iAmMartin') }}</h1>
+        <h2>{{ t('intro.letMeAutomate') }}
           <div class="highlight-wrap">
             <SlideTransition appear>
               <span :key="selectedOption" class="highlight">
@@ -108,7 +109,7 @@ useMouseDots({ dotCount: 50, dotSize: 10, color: '#31B57C' });
               </span>
             </SlideTransition>
           </div>
-          in your company
+          {{ t('intro.inYourCompany') }}
         </h2>
       </div>
     </div>
@@ -118,7 +119,7 @@ useMouseDots({ dotCount: 50, dotSize: 10, color: '#31B57C' });
     <div class="reviews-wrap">
       <Reviews />
       <div class="more-reviews">
-        <a href="https://www.linkedin.com/in/martin-malinda-58b03253/">Read more reviews on LinkedIn</a>
+        <a href="https://www.linkedin.com/in/martin-malinda-58b03253/">{{ t('reviews.readMoreOnLinkedin') }}</a>
       </div>
     </div>
   </div>
@@ -127,8 +128,9 @@ useMouseDots({ dotCount: 50, dotSize: 10, color: '#31B57C' });
   </div>
   <footer><small>{{ new Date().getFullYear() }}
       <a href="https://github.com/MartinMalinda/auto/blob/master/LICENSE">MIT License</a> |
-      <a href="https://github.com/MartinMalinda/auto">hosted on Github 🔍</a>
+      <a href="https://github.com/MartinMalinda/auto">{{ t('footer.hostedOnGithub') }} 🔍</a>
     </small></footer>
+  <LanguageSwitch />
 </template>
 
 <style lang="scss">

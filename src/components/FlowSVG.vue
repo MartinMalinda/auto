@@ -1,31 +1,62 @@
+<script setup lang="ts">
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
+</script>
 <template>
   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" viewBox="0 0 800 422">
     <defs>
       <path id="reuse-0" fill="#fff" d="M0 0h80v80H0z" />
     </defs>
     <circle class="step step-1" cx="95" cy="190" r="88" fill="#fff" stroke="#000" stroke-opacity="0" stroke-width="4" />
-    <text class="step step-1" x="44" y="330" fill="black" style="font: 500 26px Ubuntu">Consult</text>
-    <text class="step step-2" x="52" y="355" fill="black" style="font: 400 16px Ubuntu;">processes</text>
-    <text class="step step-2" x="20" y="377" fill="black" style="font: 400 16px Ubuntu;">your business model</text>
-    <text class="step step-2" x="32" y="398" fill="black" style="font: 400 16px Ubuntu;">conversion flow</text>
-    <text class="step step-2" x="20" y="419" fill="black" style="font: 400 16px Ubuntu;">your tools / software</text>
+    <text text-anchor="middle" class="step step-1" x="84" y="330" fill="black" style="font: 500 26px Ubuntu">
+      {{ t('process.consult') }}
+    </text>
+    <text text-anchor="middle" class="step step-2" x="84" y="355" fill="black" style="font: 400 16px Ubuntu;">
+      {{ t('process.processes') }}
+    </text>
+    <text text-anchor="middle" class="step step-2" x="84" y="377" fill="black" style="font: 400 16px Ubuntu;">
+      {{ t('process.yourBusinessModel') }}
+    </text>
+    <text text-anchor="middle" class="step step-2" x="84" y="398" fill="black" style="font: 400 16px Ubuntu;">
+      {{ t('process.conversionFlow') }}
+    </text>
+    <text text-anchor="middle" class="step step-2" x="84" y="419" fill="black" style="font: 400 16px Ubuntu;">
+      {{ t('process.yourTools') }}
+    </text>
     <circle class="step step-4" cx="392" cy="190" r="88" fill="#fff" stroke="#000" stroke-opacity="0"
       stroke-width="4" />
-    <text class="step step-4" x="335" y="330" fill="black" style="font: 500 26px Ubuntu">Integrate</text>
-    <text class="step step-5" x="331" y="355" fill="black" style="font: 400 16px Ubuntu;">set up new tools</text>
-    <text class="step step-5" x="353" y="377" fill="black" style="font: 400 16px Ubuntu;">wire it up</text>
-    <text class="step step-5" x="322" y="398" fill="black" style="font: 400 16px Ubuntu;">create dashboards</text>
-    <text class="step step-5" x="315" y="419" fill="black" style="font: 400 16px Ubuntu;">write code if needed</text>
+    <text text-anchor="middle" class="step step-4" x="390" y="330" fill="black" style="font: 500 26px Ubuntu">{{
+        t('process.integrate')
+    }}</text>
+    <text text-anchor="middle" class="step step-5" x="390" y="355" fill="black" style="font: 400 16px Ubuntu;">{{
+        t('process.setUpTools')
+    }}</text>
+    <text text-anchor="middle" class="step step-5" x="390" y="377" fill="black" style="font: 400 16px Ubuntu;">{{
+        t('process.wireItUp')
+    }}</text>
+    <text text-anchor="middle" class="step step-5" x="390" y="398" fill="black" style="font: 400 16px Ubuntu;">{{
+        t('process.createDashboard')
+    }}</text>
+    <text text-anchor="middle" class="step step-5" x="390" y="419" fill="black" style="font: 400 16px Ubuntu;">{{
+        t('process.writeCodeIfNeeded')
+    }}</text>
     <path class="step step-3 arrow arrow-1" fill="#B3B3B3"
       d="M180 188.5a1.5 1.5 0 0 0 0 3v-3Zm121 2.6c.6-.6.6-1.6 0-2.2l-9.5-9.5a1.5 1.5 0 0 0-2.1 2.1l8.5 8.5-8.5 8.5a1.5 1.5 0 0 0 2.1 2.1l9.6-9.5Zm-121 .4h120v-3H180v3Z" />
     <circle class="step step-7" cx="696" cy="190" r="88" fill="#fff" stroke="#000" stroke-opacity="0"
       stroke-width="4" />
-    <text class="step step-7" x="640" y="330" fill="black" style="font: 500 26px Ubuntu;">Empower</text>
-    <text class="step step-9" x="614" y="355" fill="black" style="font: 400 16px Ubuntu;">explain the
-      integrations</text>
-    <text class="step step-9" x="610" y="377" fill="black" style="font: 400 16px Ubuntu;">make it as easy as
-      possible</text>
-    <text class="step step-9" x="624" y="398" fill="black" style="font: 400 16px Ubuntu;">prevent vendor lock</text>
+    <text text-anchor="middle" class="step step-7" x="700" y="330" fill="black" style="font: 500 26px Ubuntu;">{{
+        t('process.empower')
+    }}</text>
+    <text text-anchor="middle" class="step step-9" x="700" y="355" fill="black" style="font: 400 16px Ubuntu;">{{
+        t('process.explainIntegrations')
+    }}</text>
+    <text text-anchor="middle" class="step step-9" x="700" y="377" fill="black" style="font: 400 16px Ubuntu;">{{
+        t('process.makeItEasy')
+    }}</text>
+    <text text-anchor="middle" class="step step-9" x="700" y="398" fill="black" style="font: 400 16px Ubuntu;">{{
+        t('process.preventVendorLock')
+    }}</text>
     <path class="step step-6" fill="#B3B3B3"
       d="M484 188.5a1.5 1.5 0 0 0 0 3v-3Zm121 2.6c.6-.6.6-1.6 0-2.2l-9.5-9.5a1.5 1.5 0 0 0-2.1 2.1l8.5 8.5-8.5 8.5a1.5 1.5 0 0 0 2.1 2.1l9.6-9.5Zm-121 .4h120v-3H484v3Z" />
     <path class="step step-4" fill="#FFBF00"
@@ -58,7 +89,9 @@
     </g>
     <path class="step step-10" fill="#B3B3B3"
       d="M694.5 98a1.5 1.5 0 0 0 3 0h-3ZM86.9 99c.6.6 1.6.6 2.2 0l9.5-9.5a1.5 1.5 0 1 0-2.1-2.1L88 95.9l-8.5-8.5a1.5 1.5 0 1 0-2.1 2.1l9.5 9.6ZM429 23.6h8v-3h-8v3Zm14 0h16.1v-3h-16v3Zm22.1 0h16.1v-3h-16v3Zm22.1 0h16.1v-3h-16v3Zm22.1 0h16.1v-3h-16v3Zm22.1 0h16v-3h-16v3Zm22.1 0h16v-3h-16v3Zm22.1 0h16v-3h-16v3Zm22 0h16.2v-3h-16.1v3Zm22.2 0h16v-3h-16v3Zm22 0H658v-3h-16v3Zm22.2 0h8v-3h-8v3Zm8 0c2.2 0 4.3.3 6.3 1l.9-3c-2.3-.6-4.7-1-7.2-1v3Zm10.8 2.7c3.8 2.1 6.9 5.2 9 9l2.6-1.4a25.6 25.6 0 0 0-10.2-10.2l-1.4 2.6Zm10.8 13.5c.6 2 .9 4.1.9 6.3h3c0-2.5-.4-5-1-7.2l-3 .9Zm.9 6.3v9.5h3V46h-3Zm0 16.5v19h3v-19h-3Zm0 26V98h3v-9.5h-3ZM89.5 98v-9.5h-3V98h3Zm0-16.5v-19h-3v19h3Zm0-26V46h-3v9.5h3Zm0-9.5c0-2.2.3-4.3 1-6.3l-3-.9c-.6 2.3-1 4.7-1 7.2h3Zm2.7-10.8c2.1-3.8 5.2-6.9 9-9l-1.4-2.6a25.6 25.6 0 0 0-10.2 10.2l2.6 1.4Zm13.5-10.8c2-.6 4-.9 6.3-.9v-3c-2.5 0-5 .4-7.2 1l.9 3Zm6.3-.9h8v-3h-8v3Zm14 0h16.1v-3h-16v3Zm22.1 0h16.1v-3h-16v3Zm22.1 0h16.1v-3h-16v3Zm22.1 0h16.1v-3h-16v3Zm22.1 0h16v-3h-16v3Zm22.1 0h16v-3h-16v3Zm22.1 0h16v-3h-16v3Zm22 0h16.2v-3h-16.1v3Zm22.2 0h16v-3h-16v3Zm22 0H341v-3h-16v3Zm22.2 0h8v-3h-8v3Z" />
-    <text class="step step-10" x="366" y="28" fill="black" style="font: 400 16px Ubuntu;">Repeat</text>
+    <text text-anchor="middle" class="step step-10" x="392" y="28" fill="black" style="font: 400 16px Ubuntu;">{{
+        t('process.repeat')
+    }}</text>
     <g class="step step-1" filter="url(#c)">
       <g clip-path="url(#d)">
         <path fill="#55ACEE"

@@ -1,93 +1,43 @@
 {
   "notFound": "Not found",
-  "header": {
-    "startNow": "Start now"
-  },
   "meta": {
-    "description": "Herohero is a social network that appreciates creativity.",
-    "title": "About # Herohero"
+    "description": "Automation of communication, analytics, social media and other internal processes for your company. Integrations, consulting and workshops. Slack bots, Airtable, Notion, Zapier and others. Let's talk!",
+    "title": "Automation | Martin Malinda"
   },
-  "home": {
-    "mainHeader": "Herohero is\n a social network\n that appreciates creativity.",
-    "subscribers": "Subscribers",
-    "subscriptionPrice": "Subscription price",
-    "ourFee": "Our fee is 10%",
-    "secondSection": {
-      "header": "Are you a creator or a fan? Why not both!",
-      "description": "We believe that every creative person respects other people's work as well. That's why herohero doesn't divide users between creators and fans."
-    },
-    "thirdSection": {
-      "header": "Creative work takes time. Time is not free.",
-      "description": "Let your fans subscribe to you directly and build a regular income from your creative work.",
-      "subscribe": "Subscribe for 5 € / month"
-    },
-    "fourthSection": {
-      "header": "It doesn't matter who you are or what you do.",
-      "description": "Hundreds of people start their herohero accounts every day. Just do whatever feels like you.",
-      "creatorGroups": {
-        "musicians": "Musicians",
-        "videoCreators": "Video Creators",
-        "writers": "Writers",
-        "visualArtists": "Visual Artists",
-        "teachers": "Tutorials and Education",
-        "podcasters": "Podcasters",
-        "photographers": "Photographers"
-      }
-    },
-    "fifthSection": {
-      "header": "Create freely. Enjoy content without distractions.",
-      "description": "You probably don't want your fans to be distracted by other content. That's why we provide an intimate and noise-free platform without intrusive suggestions, ads, and even likes."
-    },
-    "sixthSection": {
-      "soon": "soon",
-      "post": {
-        "header": "California's nature and wildlife is hugely diverse with great wilderness areas.",
-        "sunday": "Sunday"
-      },
-      "comments": {
-        "1": {
-          "name": "Amy Smith",
-          "text": "this is 😍 great!"
-        },
-        "2": {
-          "name": "Natalia Sharma",
-          "text": "Can you tell us where is  this located exactly? Would love to explore this area too."
-        },
-        "3": {
-          "name": "Carl Brown",
-          "text": "Great stuff, mate!"
-        }
-      },
-      "features": {
-        "1": "Comments",
-        "2": "Video & Audio Player",
-        "3": "No data limits",
-        "4": "Invites",
-        "5": "Regular payouts",
-        "6": "Messaging",
-        "7": "Streams"
-      }
-    },
-    "seventhSection": {
-      "header": "Build your community. Earn from subscriptions.",
-      "description": "To subscribe to someone on herohero means to be truly interested in their creative work. Why not seize the opportunity?",
-      "monthlyEarning": "Monthly Earning",
-      "yearlyEarning": "Yearly Earning"
-    },
-    "eightSection": {
-      "header": "FAQ",
-      "howDoIstart": "How do I start?",
-      "howDoIStartAnswer": "Getting started with herohero is very easy. All you have to do is sign in (you can do that via Google or Facebook), connect your card to Stripe (so we can send you your money), and start creating. There is no catch, it really is that simple.",
-      "howGetPaid": "How do I get paid?",
-      "howGetPaidAnswer": "TThe creators earn money from their fans via monthly subscriptions. We send money to the creators' bank accounts on the first business day of each month. The security of all transactions is ensured by Stripe.",
-      "whatAreTheFees": "What are the fees?",
-      "whatAreTheFeesAnswer": "Herohero keeps 10% of your earnings. This fee already includes everything, from payment gateway and transferring fees to audio and video hosting. You will not pay anything extra.",
-      "areThereRestrictions": "Are there any restrictions?",
-      "areThereRestrictionsAnswer": "We don't wish to limit your creativity. Everyone can upload an unlimited number of videos, audio, images and text. As for restrictions on topics - do whatever you like, as long as your content complies with Czech law."
-    }
+  "intro": {
+    "iAmMartin": "Hi, I'm Martin 👋",
+    "letMeAutomate": "Let me automate",
+    "inYourCompany": "in your company",
+    "options": "hiring,project management,analytics,feedback collection,documentation,social media,communication,onboarding"
+  },
+  "process": {
+    "howCanIHelp": "How can I help?",
+    "consult": "Consult",
+    "processes": "processes",
+    "yourBusinessModel": "your business model",
+    "conversionFlow": "conversion flow",
+    "yourTools": "your tools / software",
+    "integrate": "Integrate",
+    "setUpTools": "set up new tools",
+    "wireItUp": "wire it up",
+    "createDashboard": "create dashboards",
+    "writeCodeIfNeeded": "write code if needed",
+    "empower": "Empower",
+    "explainIntegrations": "explain the integrations",
+    "makeItEasy": "make it as easy as possible",
+    "preventVendorLock": "prevent vendor lock",
+    "repeat": "Repeat"
+  },
+  "copied": "copied!",
+  "reviews": {
+    "readMoreOnLinkedin": "Read more reviews on LinkedIn"
+  },
+  "info": {
+    "areYouInterested": "Are you interested?",
+    "letsTalk": "Let's talk",
+    "readMore": "Read more"
   },
   "footer": {
-    "joinUs": "Join Us",
-    "helpCenter": "Help Center"
+    "hostedOnGithub": "hosted on Github"
   }
 }

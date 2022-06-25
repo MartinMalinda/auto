@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { defineAsyncComponent, onMounted, ref } from '@vue/runtime-dom';
+import { useI18n } from 'vue-i18n';
 import { addDotToCurve, createDot } from '~/utils/schema';
 
+const { t } = useI18n();
 const timeout = (time: number) => new Promise((resolve) => setTimeout(resolve, time));
 const waitForAnimation = (el: Element) => new Promise(resolve => {
   el.addEventListener('animationend', resolve);
@@ -19,8 +21,6 @@ onMounted(() => {
   setIsMobile();
   window.addEventListener('resize', setIsMobile);
 });
-
-
 
 let options = {
   root: null,
@@ -108,7 +108,7 @@ const animate = async () => {
         addDotToCurve(stepEl as SVGGeometryElement, {
           pointsMap,
           svgEl,
-          speed: 8,
+          speed: 12,
           once: true,
           onMove(point) {
             const dot = createDot({ r: 3, color: '#ccc', svgEl });
@@ -162,7 +162,7 @@ onMounted(() => {
 </script>
 <template>
   <div ref="elRef" class="process" :class="{ visible: isVisible }">
-    <h2>How can I help?</h2>
+    <h2>{{ t('process.howCanIHelp') }}</h2>
     <FlowSVGMobile v-if="isMobile" />
     <FlowSVG v-else />
   </div>

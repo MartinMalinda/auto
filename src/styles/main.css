@@ -8,6 +8,10 @@ body {
   font-weight: 500;
 }
 
+body {
+  padding-top: 10px;
+}
+
 html * {
   box-sizing: border-box;
 }

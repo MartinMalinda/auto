@@ -18,6 +18,7 @@ export function useMouseDots({ dotCount, dotSize, color }) {
     transition: ${speed}s transform, 0.3s opacity;
     transform: translate(${x}px, ${y}px);
   `;
+    const containerEl = document.querySelector('.info-wrap');
     const dots = new Array(dotCount).fill(0).map(() => {
       const el = document.createElement('div');
       el.setAttribute('style', getStyle({
@@ -25,12 +26,11 @@ export function useMouseDots({ dotCount, dotSize, color }) {
         y: 0,
         speed: 1,
       }));
-      document.body.append(el);
+      containerEl?.prepend(el);
       return el;
     });
 
     let lastMouseMove = new Date();
-    const containerEl = document.querySelector('.info-wrap');
     containerEl?.addEventListener('mousemove', (e) => {
       const event = e as MouseEvent;
       dots.forEach(async (dotEl) => {
@@ -50,7 +50,11 @@ export function useMouseDots({ dotCount, dotSize, color }) {
 
     containerEl?.addEventListener('mouseleave', () => {
       dots.forEach(async (dotEl) => {
-        dotEl.setAttribute('style', 'opacity: 0');
+        dotEl.setAttribute('style', getStyle({
+          x: Number(dotEl.dataset.x),
+          y: Number(dotEl.dataset.y),
+          speed: 1,
+        }));
         dotEl.dataset.x = String(0);
         dotEl.dataset.y = String(0);
       });

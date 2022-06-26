@@ -210,6 +210,8 @@ onMounted(() => {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  position: relative;
+  z-index: 500;
 
   h2 {
     margin-bottom: 5rem;
@@ -221,6 +223,8 @@ onMounted(() => {
 
   .row {
     display: flex;
+    position: relative;
+    z-index: 500;
 
     svg {
       height: 70px;
@@ -234,11 +238,15 @@ onMounted(() => {
       justify-content: center;
       padding: 2rem;
       box-shadow: inset 0 0 40px 0px rgba(0, 0, 0, 0.1);
+      background-color: white;
+      ;
       border-radius: 2rem;
       margin: 1rem;
       text-decoration: none;
       color: black;
       transition: 0.3s transform;
+      position: relative;
+      z-index: 100;
 
       &:hover {
         transform: scale(1.1, 1.1);

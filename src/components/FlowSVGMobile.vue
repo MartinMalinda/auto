@@ -50,13 +50,13 @@ const { t } = useI18n();
     <text text-anchor="middle" class="step step-7" x="350" y="580" fill="black" style="font: 500 26px Ubuntu;">{{
         t('process.empower')
     }}</text>
-    <text text-anchor="middle" class="step step-9" x="350" y="600" fill="black" style="font: 400 16px Ubuntu;">{{
+    <text text-anchor="middle" class="step step-8" x="350" y="600" fill="black" style="font: 400 16px Ubuntu;">{{
         t('process.explainIntegrations')
     }}</text>
-    <text text-anchor="middle" class="step step-9" x="350" y="620" fill="black" style="font: 400 16px Ubuntu;">{{
+    <text text-anchor="middle" class="step step-8" x="350" y="620" fill="black" style="font: 400 16px Ubuntu;">{{
         t('process.makeItEasy')
     }}</text>
-    <text text-anchor="middle" class="step step-9" x="350" y="640" fill="black" style="font: 400 16px Ubuntu;">{{
+    <text text-anchor="middle" class="step step-8" x="350" y="640" fill="black" style="font: 400 16px Ubuntu;">{{
         t('process.preventVendorLock')
     }}</text>
     <path class="step step-4" fill="#B3B3B3"
@@ -89,9 +89,9 @@ const { t } = useI18n();
       <path fill="#000"
         d="m202.1 510.2-4.2-1.3a.8.8 0 0 1-.5-.3.8.8 0 0 1 0-.7l9.4-32.3a.8.8 0 0 1 1-.6l4.2 1.3a.8.8 0 0 1 .5 1l-9.3 32.3a.8.8 0 0 1-.4.5.8.8 0 0 1-.7 0Zm-7.8-7.7 3-3.2a.8.8 0 0 0 0-1.2l-6.3-5.5 6.2-5.5a.8.8 0 0 0 .3-.9l-.2-.3-3-3.2a.8.8 0 0 0-.6-.2.8.8 0 0 0-.6.2l-9.9 9.3a.8.8 0 0 0 0 1.2l10 9.3a.8.8 0 0 0 1 0Zm22.5 0 9.9-9.3a.8.8 0 0 0 .3-.6.8.8 0 0 0-.3-.6l-10-9.3a.8.8 0 0 0-1 0l-3 3.2a.8.8 0 0 0 0 1.2l6.2 5.5-6.2 5.5a.8.8 0 0 0-.3.6.8.8 0 0 0 .2.6l3 3.2a.8.8 0 0 0 1 .2l.2-.2Z" />
     </g>
-    <path class="step step-8" fill="#B3B3B3"
+    <path class="step step-9" fill="#B3B3B3"
       d="M329 732.3a1.5 1.5 0 0 0 0 3v-3ZM235.9 31.1c.6.5 1.5.5 2.1 0l9.6-9.6a1.5 1.5 0 0 0-2.2-2.1l-8.4 8.5-8.5-8.5a1.5 1.5 0 1 0-2.2 2.1l9.6 9.6Zm93 704.2h8.8v-3H329v3Zm15.3 0h17.5v-3h-17.5v3Zm24 0h17.5v-3h-17.5v3Zm24 0h17.5v-3h-17.5v3Zm24 0h17.5v-3h-17.5v3Zm24 0h8.8v-3h-8.8v3Zm8.8 0c2.4 0 4.9-.3 7.1-1l-.8-2.9c-2 .6-4.1 1-6.3 1v3Zm12.2-3c4.3-2.4 7.8-6 10.1-10.2l-2.6-1.5c-2 3.8-5.2 7-9 9l1.5 2.6Zm12.2-15.3c.7-2.3 1-4.7 1-7.2h-3c0 2.2-.3 4.4-.9 6.4l3 .8Zm1-7.2v-7.7h-3v7.7h3Zm0-13.5v-15.5h-3v15.5h3Zm0-21.4v-15.5h-3V675h3Zm0-21.3v-15.5h-3v15.5h3Zm0-21.3v-15.5h-3v15.5h3Zm0-21.3v-15.6h-3V611h3Zm0-21.4v-15.5h-3v15.5h3Zm0-21.3v-15.5h-3v15.5h3Zm0-21.3v-15.5h-3V547h3Zm0-21.4v-15.5h-3v15.5h3Zm0-21.3v-15.5h-3v15.5h3Zm0-21.3v-15.5h-3V483h3Zm0-21.3V446h-3v15.6h3Zm0-21.4v-15.5h-3v15.5h3Zm0-21.3v-15.5h-3V419h3Zm0-21.3v-7.8h-3v7.8h3ZM238.5 30v-1.5h-3V30h3Zm0-2.5V26h-3v1.5h3Zm0-1.5c0-2.2.4-4.3 1-6.3l-3-.9c-.6 2.3-1 4.7-1 7.2h3Zm2.8-10.8c2-3.8 5.2-6.9 9-9l-1.5-2.6a25.6 25.6 0 0 0-10.1 10.2l2.6 1.4Zm13.4-10.8c2-.6 4.1-.9 6.4-.9v-3c-2.5 0-5 .4-7.2 1l.8 3Zm6.4-.9h7.5v-3H261v3Zm13.2 0h15.2v-3h-15.2v3Zm21 0h15.1v-3h-15.2v3Zm20.8 0h15.2v-3H316v3Zm21 0H352v-3h-15.2v3Zm20.8 0H373v-3h-15.2v3Zm20.9 0h15.2v-3h-15.2v3Zm20.9 0h15.2v-3h-15.2v3Zm20.9 0h15.2v-3h-15.2v3Zm20.9 0h7.6v-3h-7.6v3Zm7.6 0c2.2 0 4.3.3 6.3 1l.8-3c-2.2-.6-4.7-1-7.1-1v3Zm10.7 2.7c3.8 2.1 7 5.2 9 9l2.6-1.4a25.6 25.6 0 0 0-10.1-10.2l-1.5 2.6Zm10.8 13.5c.6 2 1 4.1 1 6.3h3c0-2.5-.4-5-1-7.2l-3 .9Zm1 6.3v7.8h3V26h-3Zm0 13.6V55h3V39.6h-3Zm0 21.3v15.5h3V61h-3Zm0 21.3v15.5h3V82.2h-3Zm0 21.4V119h3v-15.5h-3Zm0 21.3v15.5h3v-15.5h-3Zm0 21.3v15.5h3v-15.5h-3Zm0 21.3v15.6h3v-15.6h-3Zm0 21.4v15.5h3v-15.5h-3Zm0 21.3v15.5h3v-15.5h-3Zm0 21.3V247h3v-15.5h-3Zm0 21.3v15.6h3v-15.5h-3Zm0 21.4v15.5h3v-15.5h-3Zm0 21.3V311h3v-15.5h-3Zm0 21.3v15.5h3v-15.5h-3Zm0 21.4v7.7h3v-7.7h-3Z" />
-    <text text-anchor="middle" class="step step-10" x="472" y="372" fill="black" style="font: 400 16px Ubuntu;">{{
+    <text text-anchor="middle" class="step step-9" x="472" y="372" fill="black" style="font: 400 16px Ubuntu;">{{
         t('process.repeat')
     }}</text>
     <g filter="url(#c)">
@@ -103,7 +103,7 @@ const { t } = useI18n();
       </g>
     </g>
     <g filter="url(#e)">
-      <g class="step step-5" clip-path="url(#f)">
+      <g class="step step-6" clip-path="url(#f)">
         <path fill="#FFAC33"
           d="m272.7 740.9-17.2-12.2-.9-25.3a2.2 2.2 0 0 0-4.1-1.1l-13.4 21.4-21 2a2.2 2.2 0 0 0-1 4l17.1 12.2.7 26a2.2 2.2 0 0 0 4.1 1.1l13.6-22.2 21-2a2.2 2.2 0 0 0 1-4Z" />
         <path fill="#FFCC4D"

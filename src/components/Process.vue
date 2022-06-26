@@ -163,8 +163,7 @@ onMounted(() => {
 <template>
   <div ref="elRef" class="process" :class="{ visible: isVisible }">
     <h2>{{ t('process.howCanIHelp') }}</h2>
-    <FlowSVGMobile v-if="isMobile" />
-    <FlowSVG v-else />
+    <component :is="isMobile ? FlowSVGMobile : FlowSVG" />
   </div>
 </template>
 

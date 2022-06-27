@@ -24,8 +24,8 @@ onMounted(() => {
 
 let options = {
   root: null,
-  rootMargin: '0px',
-  threshold: 0.4
+  rootMargin: '-300px',
+  threshold: 0.1
 }
 
 const isVisible = ref(false);
@@ -74,7 +74,13 @@ const steps = [{
   delay: 200,
 }]
 
-const cleanup = () => {
+let shouldCleanup = true;
+let isAnimating = false;
+const cleanup = (force = false) => {
+  if (!shouldCleanup && !force) {
+    return;
+  }
+
   document.querySelectorAll('.process .dot').forEach(dot => dot.remove());
 
   document.querySelectorAll('.step').forEach(stepEl => {
@@ -91,8 +97,12 @@ const cleanup = () => {
 };
 
 const animate = async () => {
+  if (isAnimating) {
+    return;
+  }
+
   let index = 0;
-  cleanup();
+  cleanup(true);
   const svgEl = document.querySelector('.process svg') as HTMLElement;
   const h2 = document.querySelector('.process h2') as HTMLElement;
   const pointsMap = new Map();
@@ -101,6 +111,7 @@ const animate = async () => {
     await waitForAnimation(h2);
   }
   await timeout(500);
+  isAnimating = true;
 
   for (let stepEl of Array.from(document.querySelectorAll('.step'))) {
     if (stepEl.tagName === 'circle') {
@@ -145,15 +156,19 @@ const animate = async () => {
 
     index++;
   }
+
+  isAnimating = false;
 };
 
 onMounted(() => {
   let observer = new IntersectionObserver(([entry]) => {
     isVisible.value = entry.isIntersecting;
     if (entry.isIntersecting) {
+      shouldCleanup = false;
       animate();
     } else {
-      cleanup();
+      shouldCleanup = true;
+      setTimeout(cleanup, 400);
     }
   }, options);
   observer.observe(elRef.value as HTMLElement);

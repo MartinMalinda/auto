@@ -9,14 +9,14 @@ import SlideTransition from '~/components/transitions/SlideTransition.vue'
 import { ref } from '@vue/reactivity'
 import { nextTick, watchEffect } from 'vue';
 import IntegrationSchema from '~/components/IntegrationSchema.vue'
-import Reviews from '~/components/Reviews.vue';
+// import Reviews from '~/components/Reviews.vue';
 import Process from '~/components/Process.vue'
 import { useMouseDots } from '~/utils/mouse';
 import Info from '~/components/Info.vue';
 import LanguageSwitch from '~/components/LanguageSwitch.vue'
 
 type HeadObject = Parameters<typeof useHead>[0]
-const host = 'https://automate.martinmalinda.cz'; // TODO
+const host = 'https://automation.martinmalinda.cz'; // TODO
 const route = useRoute()
 const { t, locale, availableLocales } = useI18n();
 

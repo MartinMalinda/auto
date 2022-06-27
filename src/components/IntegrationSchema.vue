@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
-import IntegrationSchemaSVG from "~/components/IntegrationSchemaSVG3.vue";
+import IntegrationSchemaSVG from "~/components/IntegrationSchemaSVG.vue";
 import { getCurves, addDotToCurve } from '~/utils/schema';
 import { useIntersectionObserver, waitUntilTruthy } from '~/utils/intersect';
 

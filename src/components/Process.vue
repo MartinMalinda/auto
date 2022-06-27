@@ -73,28 +73,7 @@ const steps = [{
   duration: 'long',
   delay: 200,
 }]
-
-let shouldCleanup = true;
 let isAnimating = false;
-const cleanup = (force = false) => {
-  if (!shouldCleanup && !force) {
-    return;
-  }
-
-  document.querySelectorAll('.process .dot').forEach(dot => dot.remove());
-
-  document.querySelectorAll('.step').forEach(stepEl => {
-    stepEl.classList.remove('appear');
-    stepEl.classList.remove('slide-down');
-    stepEl.classList.remove('slide-left');
-    stepEl.classList.remove('quick');
-    stepEl.classList.remove('long');
-
-    // waitForAnimation(stepEl).then(() => {
-    //   console.log('finished', (stepEl.className as any).baseVal ? (stepEl.className as any).baseVal : stepEl.className);
-    // });
-  });
-};
 
 const animate = async () => {
   if (isAnimating) {
@@ -102,7 +81,6 @@ const animate = async () => {
   }
 
   let index = 0;
-  cleanup(true);
   const svgEl = document.querySelector('.process svg') as HTMLElement;
   const h2 = document.querySelector('.process h2') as HTMLElement;
   const pointsMap = new Map();
@@ -156,19 +134,13 @@ const animate = async () => {
 
     index++;
   }
-
-  isAnimating = false;
 };
 
 onMounted(() => {
   let observer = new IntersectionObserver(([entry]) => {
     isVisible.value = entry.isIntersecting;
     if (entry.isIntersecting) {
-      shouldCleanup = false;
       animate();
-    } else {
-      shouldCleanup = true;
-      setTimeout(cleanup, 400);
     }
   }, options);
   observer.observe(elRef.value as HTMLElement);

@@ -265,7 +265,7 @@ onMounted(() => {
       }
     }
 
-    @media (max-width: 360px) {
+    @media (max-width: 380px) {
       a {
         width: 140px;
         padding: 2rem 1rem;

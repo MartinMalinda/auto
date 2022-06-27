@@ -11,36 +11,36 @@ const { t } = useI18n();
     </defs>
     <circle class="step-1 step" cx="237" cy="122" r="88" fill="#fff" stroke="#000" stroke-opacity=".2"
       stroke-width="4" />
-    <text text-anchor="middle" class="step step-1" x="320" y="240" fill="black" style="font: 500 26px Ubuntu">
+    <text text-anchor="middle" class="step step-1" x="330" y="240" fill="black" style="font: 500 26px Ubuntu">
       {{ t('process.consult') }}
     </text>
-    <text text-anchor="middle" class="step step-2" x="320" y="260" fill="black" style="font: 400 16px Ubuntu;">
+    <text text-anchor="middle" class="step step-2" x="330" y="260" fill="black" style="font: 400 16px Ubuntu;">
       {{ t('process.processes') }}
     </text>
-    <text text-anchor="middle" class="step step-2" x="320" y="280" fill="black" style="font: 400 16px Ubuntu;">
+    <text text-anchor="middle" class="step step-2" x="330" y="280" fill="black" style="font: 400 16px Ubuntu;">
       {{ t('process.yourBusinessModel') }}
     </text>
-    <text text-anchor="middle" class="step step-2" x="320" y="300" fill="black" style="font: 400 16px Ubuntu;">
+    <text text-anchor="middle" class="step step-2" x="330" y="300" fill="black" style="font: 400 16px Ubuntu;">
       {{ t('process.conversionFlow') }}
     </text>
-    <text text-anchor="middle" class="step step-2" x="320" y="320" fill="black" style="font: 400 16px Ubuntu;">
+    <text text-anchor="middle" class="step step-2" x="330" y="320" fill="black" style="font: 400 16px Ubuntu;">
       {{ t('process.yourTools') }}
     </text>
     <circle class="step-4 step" cx="237" cy="479" r="88" fill="#fff" stroke="#000" stroke-opacity=".2"
       stroke-width="4" />
-    <text text-anchor="middle" class="step step-4" x="70" y="430" fill="black" style="font: 500 26px Ubuntu">{{
+    <text text-anchor="middle" class="step step-4" x="80" y="430" fill="black" style="font: 500 26px Ubuntu">{{
         t('process.integrate')
     }}</text>
-    <text text-anchor="middle" class="step step-5" x="70" y="455" fill="black" style="font: 400 16px Ubuntu;">{{
+    <text text-anchor="middle" class="step step-5" x="80" y="455" fill="black" style="font: 400 16px Ubuntu;">{{
         t('process.setUpTools')
     }}</text>
-    <text text-anchor="middle" class="step step-5" x="70" y="477" fill="black" style="font: 400 16px Ubuntu;">{{
-        t('process.wireItUp')
+    <text text-anchor="middle" class="step step-5" x="80" y="477" fill="black" style="font: 400 16px Ubuntu;">{{
+        t('process.wireItUpShort')
     }}</text>
-    <text text-anchor="middle" class="step step-5" x="70" y="498" fill="black" style="font: 400 16px Ubuntu;">{{
+    <text text-anchor="middle" class="step step-5" x="80" y="498" fill="black" style="font: 400 16px Ubuntu;">{{
         t('process.createDashboard')
     }}</text>
-    <text text-anchor="middle" class="step step-5" x="70" y="519" fill="black" style="font: 400 16px Ubuntu;">{{
+    <text text-anchor="middle" class="step step-5" x="80" y="519" fill="black" style="font: 400 16px Ubuntu;">{{
         t('process.writeCodeIfNeeded')
     }}</text>
     <path class="step step-2" fill="#B3B3B3"

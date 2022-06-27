@@ -100,13 +100,11 @@ const { t } = useI18n();
           d="m81.3 213 .8-4.3c2.6-1.8 7.6-5 9.6-10 .3.2.1.2.4.3 1.7.3 3.2-1.6 3.7-4.3.5-2.6-.5-5-2.1-5.3.5-1 1-2.6 1.3-4.5 1.3-6.4-2.8-15.3-15.2-17.7-11-2.1-19.5 4.3-20.7 10.7-.4 1.9-.6 3.4-.6 4.7-1.6-.1-3.2 1.7-3.7 4.2-.5 2.6.4 5 2 5.4.4 0 0-.2.3-.3 0 5.4 3.6 10.3 5.4 13l-.8 4c-9-.6-16.4 2.8-17.3 7.4l-.3 1.8c-.4 1.8 1.4 2.1 3.2 2.5l40.8 8c1.8.3 3.6.6 4-1.2l.3-1.7c.8-4.4-4.9-10-11.1-12.7Z" />
       </g>
     </g>
-    <g filter="url(#e)">
-      <g class="step step-7" clip-path="url(#f)">
-        <path fill="#FFAC33"
-          d="m731.7 198-17.2-12.2-.9-25.3a2.2 2.2 0 0 0-4-1l-13.4 21.4-21 2a2.2 2.2 0 0 0-1.1 4l17.2 12.2.7 26a2.2 2.2 0 0 0 4 1l13.7-22.1 21-2a2.2 2.2 0 0 0 1-4Z" />
-        <path fill="#FFCC4D"
-          d="M682.5 210.1 678 207v-7.6a2.2 2.2 0 0 0-4.2-1.1l-3.8 6.5-5.5.5a2.2 2.2 0 0 0-1 4l4.4 3.2-.1 8.3a2.2 2.2 0 0 0 4.1 1.1l4-7.2 5.5-.5a2.2 2.2 0 0 0 1-4Zm3.1-49L681 158l-.5-5.6a2.2 2.2 0 0 0-4-1l-3.2 4.5-5.6.5a2.2 2.2 0 0 0-1.1 4l4.6 3.3.5 5.6a2.2 2.2 0 0 0 4 1l3.3-4.5 5.5-.5a2.2 2.2 0 0 0 1.1-4Z" />
-      </g>
+    <g class="step step-7" clip-path="url(#f)">
+      <path fill="#FFAC33"
+        d="m731.7 198-17.2-12.2-.9-25.3a2.2 2.2 0 0 0-4-1l-13.4 21.4-21 2a2.2 2.2 0 0 0-1.1 4l17.2 12.2.7 26a2.2 2.2 0 0 0 4 1l13.7-22.1 21-2a2.2 2.2 0 0 0 1-4Z" />
+      <path fill="#FFCC4D"
+        d="M682.5 210.1 678 207v-7.6a2.2 2.2 0 0 0-4.2-1.1l-3.8 6.5-5.5.5a2.2 2.2 0 0 0-1 4l4.4 3.2-.1 8.3a2.2 2.2 0 0 0 4.1 1.1l4-7.2 5.5-.5a2.2 2.2 0 0 0 1-4Zm3.1-49L681 158l-.5-5.6a2.2 2.2 0 0 0-4-1l-3.2 4.5-5.6.5a2.2 2.2 0 0 0-1.1 4l4.6 3.3.5 5.6a2.2 2.2 0 0 0 4 1l3.3-4.5 5.5-.5a2.2 2.2 0 0 0 1.1-4Z" />
     </g>
     <defs>
       <clipPath id="a">
@@ -130,15 +128,7 @@ const { t } = useI18n();
         <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.34902 0" />
         <feBlend in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape" />
       </filter>
-      <filter id="e" width="110" height="110" x="641" y="138" color-interpolation-filters="sRGB"
-        filterUnits="userSpaceOnUse">
-        <feFlood flood-opacity="0" result="BackgroundImageFix" />
-        <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
-        <feOffset dy="2" />
-        <feGaussianBlur stdDeviation="2" />
-        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.34902 0" />
-        <feBlend in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape" />
-      </filter>
+
     </defs>
   </svg>
 </template>

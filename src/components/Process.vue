@@ -3,6 +3,8 @@ import { defineAsyncComponent, onMounted, ref } from '@vue/runtime-dom';
 import { useI18n } from 'vue-i18n';
 import { addDotToCurve, createDot } from '~/utils/schema';
 
+let isAnimating = false;
+
 const { t } = useI18n();
 const timeout = (time: number) => new Promise((resolve) => setTimeout(resolve, time));
 const waitForAnimation = (el: Element) => new Promise(resolve => {
@@ -21,9 +23,13 @@ onMounted(() => {
   setIsMobile();
   let animateTimer: any;
   window.addEventListener('resize', () => {
+    const prev = isMobile.value;
     setIsMobile();
-    clearTimeout(animateTimer);
-    animateTimer = setTimeout(animate, 500);
+    if (isMobile.value !== prev) {
+      isAnimating = false;
+      clearTimeout(animateTimer);
+      animateTimer = setTimeout(animate, 500);
+    }
   });
 });
 
@@ -77,8 +83,7 @@ const steps = [{
   animation: 'appear', // repeat arrow
   duration: 'long',
   delay: 200,
-}]
-let isAnimating = false;
+}];
 
 const animate = async () => {
   if (isAnimating) {

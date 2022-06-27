@@ -183,6 +183,7 @@ onMounted(() => {
       border: 1px solid rgba(0, 0, 0, 0.09);
       border-left: 0;
       background: #0000000c;
+      margin: 0;
     }
 
     small {
@@ -195,10 +196,13 @@ onMounted(() => {
     }
 
     input {
+      display: block;
+      margin: 0;
       padding: 0.5rem 1rem;
       border: 1px solid rgba(0, 0, 0, 0.09);
       display: block;
       font-size: 1.1rem;
+      border-radius: 0;
     }
   }
 

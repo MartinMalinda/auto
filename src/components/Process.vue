@@ -84,9 +84,9 @@ const cleanup = () => {
     stepEl.classList.remove('quick');
     stepEl.classList.remove('long');
 
-    waitForAnimation(stepEl).then(() => {
-      console.log('finished', (stepEl.className as any).baseVal ? (stepEl.className as any).baseVal : stepEl.className);
-    });
+    // waitForAnimation(stepEl).then(() => {
+    //   console.log('finished', (stepEl.className as any).baseVal ? (stepEl.className as any).baseVal : stepEl.className);
+    // });
   });
 };
 

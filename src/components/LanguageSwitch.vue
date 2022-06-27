@@ -7,8 +7,20 @@ const { availableLocales, locale: currentLocale } = useI18n();
 
 const isActive = ref(false);
 
+const scrollTop = ref(0);
+
 document.body.addEventListener('click', () => {
   isActive.value = false;
+});
+
+const scrollingEl = document.scrollingElement as HTMLElement;
+let allowSet = true;
+window.addEventListener('scroll', () => {
+  if (allowSet) {
+    scrollTop.value = scrollingEl.scrollTop;
+    allowSet = false;
+    setTimeout(() => allowSet = true, 50);
+  }
 });
 
 const labels = {
@@ -18,7 +30,7 @@ const labels = {
 
 </script>
 <template>
-  <div class="language-switch" :class="{ active: isActive }">
+  <div class="language-switch" :class="{ active: isActive, hidden: scrollTop > 200 }">
     <button @click.stop="() => isActive = !isActive" class="selected locale">
       {{ labels[currentLocale] }}
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -256 1792 1792">
@@ -47,11 +59,17 @@ const labels = {
   border-radius: 1rem;
   overflow: hidden;
   z-index: 666;
+  transition: 0.3s opacity, 0.4s visibility;
 
   svg {
     width: 1rem;
     transform-origin: 50% 50%;
     transition: 0.3s transform;
+  }
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
   }
 
   &.active {

@@ -264,6 +264,19 @@ onMounted(() => {
         height: 40px;
       }
     }
+
+    @media (max-width: 360px) {
+      a {
+        width: 140px;
+        padding: 2rem 1rem;
+        margin: 0.5rem;
+        text-align: center;
+      }
+
+      svg {
+        height: 40px;
+      }
+    }
   }
 }
 </style>

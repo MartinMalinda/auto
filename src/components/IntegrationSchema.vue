@@ -19,7 +19,7 @@ onMounted(() => {
   let interval = 600;
   curves.forEach(curve => {
     const add = async () => {
-      console.log('adding dot');
+      // console.log('adding dot');
       addDotToCurve(curve, { pointsMap, svgEl, speed: 2 });
       await waitUntilTruthy(isVisible);
       setTimeout(add, interval);

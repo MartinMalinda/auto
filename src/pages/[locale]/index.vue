@@ -154,7 +154,7 @@ useMouseDots({ dotCount: 50, dotSize: 10, color: '#31B57C' });
 
 .playground {
   min-height: 100vh;
-  padding: 0 2rem;
+  padding: 2rem;
 
   @media (max-width: 600px) {
     min-height: auto;

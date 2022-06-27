@@ -24,7 +24,7 @@ onMounted(() => {
 
 let options = {
   root: null,
-  rootMargin: '-300px',
+  rootMargin: '0 -300px',
   threshold: 0.1
 }
 

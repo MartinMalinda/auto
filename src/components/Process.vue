@@ -19,7 +19,12 @@ const setIsMobile = () => {
 };
 onMounted(() => {
   setIsMobile();
-  window.addEventListener('resize', setIsMobile);
+  let animateTimer: any;
+  window.addEventListener('resize', () => {
+    setIsMobile();
+    clearTimeout(animateTimer);
+    animateTimer = setTimeout(animate, 500);
+  });
 });
 
 let options = {

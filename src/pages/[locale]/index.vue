@@ -181,6 +181,7 @@ h1 {
 
 h2 {
   font-size: 1.8rem;
+  min-height: 2em; // reserve space in case line break happens to prevent layout shift
 
   @media (max-width: 600px) {
     font-size: 1.4em;

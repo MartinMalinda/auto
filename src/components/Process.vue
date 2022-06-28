@@ -148,8 +148,8 @@ const animate = async () => {
 
 onMounted(() => {
   let observer = new IntersectionObserver(([entry]) => {
-    isVisible.value = entry.isIntersecting;
     if (entry.isIntersecting) {
+      isVisible.value = true;
       animate();
     }
   }, options);

@@ -113,7 +113,7 @@ onMounted(() => {
         <Email />
         <h3>{{ t('info.letsTalk') }}</h3>
       </a>
-      <a target="_blank" href="https://martins-automations.notion.site/Automation-55e70f45ddfd4e50a22892f7b189b220">
+      <a target="_blank" href="https://automation-docs.martinmalinda.cz/why-automate.html">
         <Notion />
         <h3>{{ t('info.readMore') }}</h3>
       </a>

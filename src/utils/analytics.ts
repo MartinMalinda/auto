@@ -1,5 +1,5 @@
 let createdGA = false;
-const GA_ID = ''; // TODO
+const GA_ID = 'UA-58342270-3';
 
 function addScriptViaTag(src: string) {
   if (document.querySelector(`script[src='${src}']`))
@@ -34,7 +34,9 @@ async function setupGA() {
   await addScriptViaTag('https://www.google-analytics.com/analytics.js')
   if (!createdGA && (window as any).ga) {
     await timeout(4000);
-    (window as any).ga('create', GA_ID, 'auto')
+    (window as any).ga('create', GA_ID, {
+      storage: 'none'
+    });
     createdGA = true
   }
 }

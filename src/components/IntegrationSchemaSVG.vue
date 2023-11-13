@@ -3,10 +3,9 @@
     xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
       <path id="reuse-0" fill="#fff" d="M0 0h96v96H0z" />
-      <pattern id="profile" patternUnits="userSpaceOnUse" width="560" height="560"
-        patternTransform="scale(0.235, 0.235)">
+      <pattern id="profile" patternUnits="userSpaceOnUse" width="560" height="560" patternTransform="scale(0.235, 0.235)">
         <image preserveAspectRatio="xMinYMin slice"
-          xlink:href="https://media-exp1.licdn.com/dms/image/D4E03AQFw3INbHtsRMQ/profile-displayphoto-shrink_800_800/0/1656342829924?e=1661990400&v=beta&t=WAEQybylcj7P_qcgqtJxzo3eTh_S_L6-YAg-oZTNtJ4" />
+          xlink:href="https://res.cloudinary.com/serenity-themes/image/upload/v1699892383/automation/hsiiicleujohq9b41o4b.jpg" />
       </pattern>
     </defs>
     <g clip-path="url(#clip0_0_1)">

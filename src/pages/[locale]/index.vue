@@ -92,7 +92,7 @@ onMounted(() => {
 });
 
 if (window.innerWidth > 1000) {
-  useMouseDots({ dotCount: 50, dotSize: 10, color: '#31B57C' });
+  // useMouseDots({ dotCount: 50, dotSize: 10, color: '#31B57C' });
 }
 
 </script>
